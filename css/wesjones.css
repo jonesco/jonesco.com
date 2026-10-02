@@ -288,3 +288,6 @@ a:has(.next) { text-decoration: none; display: block; margin-bottom: 72px; }
   .cols-auto { flex-wrap: wrap; }
   .dark-band:has(.skills-header) .dark-band-inner { grid-template-columns: 1fr; gap: 28px; }
 }
+
+/* Text selection: yellow highlight, black text */
+::selection { background: #ffe500; color: #000; }
