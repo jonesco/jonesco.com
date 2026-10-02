@@ -35,7 +35,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/fonts/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/css/wesjones.css?v=2" />
+    <link rel="stylesheet" href="/css/wesjones.css?v=3" />
 
     <!-- Structured data for AI and search engines -->
     <script type="application/ld+json">
@@ -85,14 +85,20 @@
     <title>SpotMe P2P Lending Concept — Wes Jones, Lead Product Designer</title>
   </head>
   <body>
+    <header class="site-header">
+      <div class="bar">
+        <a class="brand" href="/" aria-label="Wes Jones — home">
+          <img src="/images/header2.png" alt="Wes Jones — Lead Product Designer" />
+        </a>
+        <nav>
+          <a href="/#work">Work</a>
+          <a href="/#contact">Contact</a>
+          <a href="/images/Wes_Jones_Resume.pdf" class="opt">Resumé</a>
+        </nav>
+      </div>
+    </header>
     <div id="root">
       <div class="page">
-        <nav class="site-nav">
-          <a class="site-logo" href="/">
-            <img src="/images/header2.png" style="width: 300px" alt="Wes Jones — Lead Product Designer" />
-          </a>
-          <a class="back-link" href="/">← Back to main page</a>
-        </nav>
         <div class="cols-2-1">
           <div>
             <h5 id="rcorners1">Case Study #1259</h5>
@@ -248,5 +254,16 @@
         </a>
       </div>
     </div>
+    <footer class="site-footer">
+      <div class="bar">
+        <div class="links">
+          <a href="mailto:wes@jonesco.com">wes@jonesco.com</a>
+          <a href="https://www.linkedin.com/in/wes-jones-a0914312/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="/images/Wes_Jones_Resume.pdf">Resumé</a>
+        </div>
+        <small>© <span class="yr">2026</span> Wes Jones</small>
+      </div>
+    </footer>
+    <script>document.querySelectorAll('.yr').forEach(e => e.textContent = new Date().getFullYear());</script>
   </body>
 </html>
