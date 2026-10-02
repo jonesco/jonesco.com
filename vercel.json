@@ -1,4 +1,0 @@
-{
-  "buildCommand": "NODE_OPTIONS=--openssl-legacy-provider CI=false react-scripts build",
-  "outputDirectory": "build"
-}
