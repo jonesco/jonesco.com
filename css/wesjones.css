@@ -244,19 +244,18 @@ li.special-item::marker { color: var(--ink); }
 .hint { font-family: var(--label); font-size: 12px; letter-spacing: .03em; text-transform: uppercase; color: var(--muted); }
 .shadowed-div { border: var(--thin); box-shadow: none; }
 
-/* Next case study: black button block */
-a:has(.next) { text-decoration: none; display: block; margin-bottom: 72px; }
-.next {
-  background: var(--ink); color: var(--paper); padding: 22px 24px 20px;
+/* Next case study: full-width black band joined to the footer, like Let’s talk on the home page */
+.next-band { display: block; background: var(--ink); color: var(--paper); text-decoration: none; border-bottom: 1px solid #333; margin-top: 56px; }
+.next-band .bar {
+  max-width: var(--wrap); margin: 0 auto; padding: 48px 24px 44px;
   display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap;
-  transition: background .15s;
 }
-.next:hover { background: var(--accent); }
-.next h4 {
-  color: var(--paper) !important; margin: 0;
-  font-family: var(--label); font-size: 14px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase;
+.next-label { font-family: var(--label); font-weight: 700; font-size: 14px; letter-spacing: .03em; text-transform: uppercase; }
+.next-title {
+  font-family: var(--display); font-weight: 700; text-transform: uppercase; line-height: .95;
+  font-size: clamp(32px, 4.4vw, 56px); transition: color .15s;
 }
-.next h3 { color: var(--paper); margin: 0; font-size: clamp(28px, 3.4vw, 40px); padding: 0; }
+.next-band:hover .next-title, .next-band:hover .next-label { color: var(--highlight); }
 
 .back-link { display: none; }
 
@@ -296,6 +295,8 @@ a:has(.next) { text-decoration: none; display: block; margin-bottom: 72px; }
   .bio { padding: 36px 0 32px; }
   .section-header { padding: 40px 0 24px; }
   .page > div:first-child { padding-top: 32px; }
+  .next-band .bar { padding: 36px 16px 32px; }
+  .next-band { margin-top: 40px; }
   hr { margin: 24px 0; }
   .cols-2, .cols-3, .cols-4, .cols-6, .cols-2-1, .cols-1-2, .cols-1-3, .tile-grid { grid-template-columns: 1fr; }
   .cols-auto { flex-wrap: wrap; }
