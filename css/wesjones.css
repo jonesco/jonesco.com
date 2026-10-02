@@ -178,6 +178,13 @@ section, [id] { scroll-margin-top: var(--hdr-small); }
 }
 
 /* Let’s talk: contact rows ruled like the art dept spec lists */
+/* What I bring sits on white with black type; thick rules set it apart from the bio and case studies */
+.dark-band:has(.skills-header) { background: var(--paper); color: var(--ink); border-top: var(--rule); border-bottom: var(--rule); }
+.dark-band:has(.skills-header) h1, .dark-band:has(.skills-header) p { color: var(--ink); }
+.dark-band:has(.skills-header) .dark-band-inner > div[style] { border-top-color: var(--ink); }
+.dark-band:has(.skills-header) .processtile p { color: #333; }
+.dark-band:has(.skills-header) .processtile p:first-child strong { color: var(--ink); }
+
 .dark-band:has(.contact-header) { padding-bottom: 56px; border-bottom: 1px solid #333; }
 .contactarea { max-width: 560px; }
 .contactarea h5 { border-bottom-color: var(--paper); font-size: 15px; }
