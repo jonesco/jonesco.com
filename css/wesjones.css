@@ -111,7 +111,7 @@ hr { border: 0; border-top: var(--rule); margin: 26px 0; }
 
 /* Fixed header that starts at double size and shrinks once the page scrolls (.is-scrolled on <html>).
    It floats over a fixed spacer (body padding) so the shrink never shifts the page. */
-:root { --hdr: 160px; --hdr-small: 80px; --logo: 68px; --logo-small: 34px; }
+:root { --hdr: 192px; --hdr-small: 80px; --logo: 82px; --logo-small: 34px; }
 body { padding-top: var(--hdr); }
 .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 10; background: var(--ink); color: var(--paper); }
 .site-header .bar, .site-footer .bar {
@@ -121,7 +121,7 @@ body { padding-top: var(--hdr); }
 .site-header .bar { height: var(--hdr); transition: height .25s ease; }
 .is-scrolled .site-header .bar { height: var(--hdr-small); }
 .brand { display: flex; align-items: center; }
-.brand img { height: var(--logo); width: auto; filter: invert(1); transition: height .25s ease; }   /* black wordmark art, shown white */
+.brand img { height: var(--logo); width: auto; filter: brightness(0) invert(1); transition: height .25s ease; }   /* charcoal wordmark art, shown pure white */
 .is-scrolled .brand img { height: var(--logo-small); }
 @media (prefers-reduced-motion: reduce) { .site-header .bar, .brand img { transition: none; } }
 .site-header nav { display: flex; gap: 28px; }
@@ -283,7 +283,7 @@ a:has(.next) { text-decoration: none; display: block; margin-bottom: 72px; }
 
 @media (max-width: 640px) {
   .page, .dark-band-inner, .site-header .bar, .site-footer .bar { padding-left: 16px; padding-right: 16px; }
-  :root { --hdr: 96px; --hdr-small: 64px; --logo: 36px; --logo-small: 24px; }
+  :root { --hdr: 115px; --hdr-small: 64px; --logo: 43px; --logo-small: 24px; }
   .site-header nav { gap: 16px; }
   .site-header nav a.opt { display: none; }
   .bio { padding: 36px 0 32px; }
