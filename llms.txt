@@ -59,18 +59,6 @@ URL: https://wesjones.info/magicstaff
 **Summary**: Hosted a 4-day Google Ventures Design Sprint with Central Payment Corporation's sales team to design a unified sales assistant tool. Facilitated sketching sessions, storyboarding, and delivered a polished high-fidelity clickable prototype using Ionic Platform resources — all within four days.
 URL: https://wesjones.info/cpay
 
-### SpotMe Lending Concept
-**Client**: Netspend (in partnership with IDEO)
-**Role**: Primary Netspend design liaison and lead
-**Summary**: Partnered with IDEO to conduct ethnographic research, at-home interviews, and design thinking workshops with real users. Discovered that peer-to-peer lending was a key unaddressed use case. Ran a 3-day Google Design Sprint to concept the feature, then designed and executed a user test using an App Store-style explainer prototype. User testing revealed the concept was not viable, saving the company thousands of dollars in development costs. A successful failure.
-URL: https://wesjones.info/spotme
-
-### Wellsmith Web Portal & Mobile App
-**Client**: Wellsmith (health & wellness)
-**Role**: Product designer
-**Summary**: Designed a healthcare compliance ecosystem tracking patients' medication, activity, nutrition, and vitals. Includes a web-based physician portal allowing clinicians to monitor large patient populations and offer real-time expertise, plus an individualized patient mobile app with reminders and care plan baselines.
-URL: https://wesjones.info/wellsmith
-
 ## Contact
 
 - Email: wes@jonesco.com
