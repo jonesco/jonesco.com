@@ -166,7 +166,7 @@ section, [id] { scroll-margin-top: var(--hdr-small); }
 
 /* What I bring: three columns, each skill under a white rule */
 .dark-band:has(.skills-header) .dark-band-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 40px; }
-.skills-header { grid-column: 1 / -1; }
+.skills-header { grid-column: 1 / -1; padding-bottom: 0 !important; margin-bottom: -8px; }   /* + 40px grid gap = the same 32px under the heading as Selected case studies */
 .dark-band-inner > div[style] { display: block !important; border-top: 4px solid var(--paper); padding-top: 16px; }
 .icon-cell { display: none; }
 .processtile { margin: 0; }
@@ -300,6 +300,7 @@ a:has(.next) { text-decoration: none; display: block; margin-bottom: 72px; }
   .cols-2, .cols-3, .cols-4, .cols-6, .cols-2-1, .cols-1-2, .cols-1-3, .tile-grid { grid-template-columns: 1fr; }
   .cols-auto { flex-wrap: wrap; }
   .dark-band:has(.skills-header) .dark-band-inner { grid-template-columns: 1fr; gap: 28px; }
+  .skills-header { margin-bottom: -4px; }
 }
 
 /* Text selection: yellow highlight, black text */
