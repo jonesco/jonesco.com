@@ -1,6 +1,6 @@
-# Wes Jones — Lead Product Designer
+# Wes Jones — Principal Product Designer
 
-> Lead Product Designer with more than 20 years of experience leading and mentoring digital product teams across fintech, healthcare, travel, and enterprise software. Specializes in designing agentic systems and purpose-built interaction patterns that make it easier for people to work with AI and solve complex problems.
+> Principal Product Designer with more than 20 years of experience leading and mentoring digital product teams across fintech, healthcare, travel, and enterprise software. Specializes in designing agentic systems and purpose-built interaction patterns that make it easier for people to work with AI and solve complex problems.
 
 Website: https://wesjones.info
 LinkedIn: https://www.linkedin.com/in/wes-jones-a0914312/
@@ -10,7 +10,7 @@ Resume: https://wesjones.info/images/Wes_Jones_Resume.pdf
 
 ## About
 
-Wes Jones is a Lead Product Designer who empathizes with users, understands challenges, concepts solutions, builds prototypes, tests, iterates, and delivers. He creates thoughtful, effective experiences that meet real human needs and drive business outcomes. Lately focused on designing agentic systems and AI interaction patterns.
+Wes Jones is a Principal Product Designer who empathizes with users, understands challenges, concepts solutions, builds prototypes, tests, iterates, and delivers. He creates thoughtful, effective experiences that meet real human needs and drive business outcomes. Lately focused on designing agentic systems and AI interaction patterns.
 
 ## Core Skills
 
