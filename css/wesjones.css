@@ -493,3 +493,36 @@ a:has(.next) {
 .dark-band .contactarea i { color: #93c5fd; }
 
 .dark-band:last-child { margin-bottom: 0; }
+
+
+/* ===========================
+   TRADE GOTHIC (same setup as jonescoartdept.com)
+   Bold Condensed No. 20 for headlines, Bold No. 2 for small labels, Libre Franklin for body text.
+   The overrides split each font's line height evenly around the cap height (722) so caps sit centered.
+   =========================== */
+
+@font-face { font-family: 'Trade Gothic Bold Cond 20'; src: url('../fonts/trade-gothic/TradeGothic-BoldCondTwenty.woff2') format('woff2'); font-weight: 700; font-display: swap;
+  ascent-override: 88.4%; descent-override: 16.2%; line-gap-override: 0%; }
+@font-face { font-family: 'Trade Gothic Bold 2'; src: url('../fonts/trade-gothic/TradeGothic-BoldTwo.woff2') format('woff2'); font-weight: 700; font-display: swap;
+  ascent-override: 87.6%; descent-override: 15.4%; line-gap-override: 0%; }
+
+h1, .h1, h2, .h2, .section-header h1, .tile-label h2, .next h3, .contactarea h5 {
+  font-family: 'Trade Gothic Bold Cond 20', 'Libre Franklin', sans-serif;
+  font-weight: 700;
+}
+h1, .h1 { font-size: 40px; line-height: 1.05; }
+.section-header h1 { font-size: 2.5rem; font-weight: 700; }
+.tile-label h2 { font-size: 28px; }
+.next h3 { font-size: 30px; }
+
+#rcorners1, .csid p, .back-link, .next h4, h5 {
+  font-family: 'Trade Gothic Bold 2', 'Libre Franklin', sans-serif;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+#rcorners1, .csid p { font-size: 13px; text-transform: uppercase; }
+
+@media (max-width: 640px) {
+  h1, .h1 { font-size: 32px; }
+  .section-header h1 { font-size: 28px; }
+}
