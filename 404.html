@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="compact-header">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/wesjones.css?v=14" />
+    <link rel="stylesheet" href="/css/wesjones.css?v=16" />
   </head>
   <body>
     <header class="site-header">
@@ -39,19 +39,6 @@
         <small>© <span class="yr">2026</span> Wes Jones</small>
       </div>
     </footer>
-    <script>
-      // Shrink the header once the page is scrolled; hysteresis avoids flicker near the top
-      (function () {
-        var root = document.documentElement, small = false;
-        function update() {
-          var y = window.scrollY;
-          if (!small && y > 40) { small = true; root.classList.add('is-scrolled'); }
-          else if (small && y < 8) { small = false; root.classList.remove('is-scrolled'); }
-        }
-        update();
-        window.addEventListener('scroll', update, { passive: true });
-      })();
-    </script>
     <script>document.querySelectorAll('.yr').forEach(e => e.textContent = new Date().getFullYear());</script>
   </body>
 </html>

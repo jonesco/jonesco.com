@@ -113,6 +113,9 @@ hr { border: 0; border-top: var(--rule); margin: 26px 0; }
    It floats over a fixed spacer (body padding) so the shrink never shifts the page. */
 :root { --hdr: 192px; --hdr-small: 80px; --logo: 82px; --logo-small: 34px; }
 body { padding-top: var(--hdr); }
+/* Every page but home uses the compact header from the start, with no resizing */
+.compact-header { --hdr: var(--hdr-small); --logo: var(--logo-small); }
+.compact-header .site-header .bar, .compact-header .brand img { transition: none; }
 .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 10; background: var(--ink); color: var(--paper); }
 .site-header .bar, .site-footer .bar {
   max-width: var(--wrap); margin: 0 auto; padding: 0 24px;
@@ -290,6 +293,7 @@ li.special-item::marker { color: var(--ink); }
 @media (max-width: 640px) {
   .page, .dark-band-inner, .site-header .bar, .site-footer .bar { padding-left: 16px; padding-right: 16px; }
   :root { --hdr: 115px; --hdr-small: 64px; --logo: 43px; --logo-small: 24px; }
+  .compact-header { --hdr: var(--hdr-small); --logo: var(--logo-small); }
   .site-header nav { gap: 16px; }
   .site-header nav a.opt { display: none; }
   .bio { padding: 36px 0 32px; }
