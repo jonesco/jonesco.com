@@ -218,9 +218,10 @@ section, [id] { scroll-margin-top: 80px; }
 }
 .page > div:first-child h1 { padding-bottom: 20px; border-bottom: var(--rule); margin-bottom: 24px; }
 
-/* Lists: rows separated by thin rules, like the art dept spec lists */
-ul.a { list-style: none; margin: 0; padding: 0; }
-li.special-item { padding: 12px 0; border-bottom: var(--thin); line-height: 1.45; margin: 0; }
+/* Lists: plain bullets under the heading rule */
+ul.a { list-style: disc; margin: 16px 0 0; padding-left: 1.2em; }
+li.special-item { padding: 0 0 0 .2em; margin: 0 0 12px; line-height: 1.45; }
+li.special-item::marker { color: var(--ink); }
 
 .largehint { font-size: 14px; line-height: 1.5; color: var(--muted); padding-right: 24px; }
 .hint { font-family: var(--label); font-size: 12px; letter-spacing: .03em; text-transform: uppercase; color: var(--muted); }
