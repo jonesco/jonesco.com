@@ -35,7 +35,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/fonts/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/css/wesjones.css?v=5s" />
+    <link rel="stylesheet" href="/css/wesjones.css?v=6" />
 
     <!-- Structured data for AI and search engines -->
     <script type="application/ld+json">
@@ -247,6 +247,19 @@
         <small>© <span class="yr">2026</span> Wes Jones</small>
       </div>
     </footer>
+    <script>
+      // Shrink the header once the page is scrolled; hysteresis avoids flicker near the top
+      (function () {
+        var root = document.documentElement, small = false;
+        function update() {
+          var y = window.scrollY;
+          if (!small && y > 40) { small = true; root.classList.add('is-scrolled'); }
+          else if (small && y < 8) { small = false; root.classList.remove('is-scrolled'); }
+        }
+        update();
+        window.addEventListener('scroll', update, { passive: true });
+      })();
+    </script>
     <script>document.querySelectorAll('.yr').forEach(e => e.textContent = new Date().getFullYear());</script>
   </body>
 </html>

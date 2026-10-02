@@ -109,14 +109,21 @@ hr { border: 0; border-top: var(--rule); margin: 26px 0; }
    HEADER (black bar, as on the art dept site)
    =========================== */
 
-.site-header { position: sticky; top: 0; z-index: 10; background: var(--ink); color: var(--paper); }
+/* Fixed header that starts at double size and shrinks once the page scrolls (.is-scrolled on <html>).
+   It floats over a fixed spacer (body padding) so the shrink never shifts the page. */
+:root { --hdr: 160px; --hdr-small: 80px; --logo: 68px; --logo-small: 34px; }
+body { padding-top: var(--hdr); }
+.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 10; background: var(--ink); color: var(--paper); }
 .site-header .bar, .site-footer .bar {
   max-width: var(--wrap); margin: 0 auto; padding: 0 24px;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
-.site-header .bar { height: 80px; }
+.site-header .bar { height: var(--hdr); transition: height .25s ease; }
+.is-scrolled .site-header .bar { height: var(--hdr-small); }
 .brand { display: flex; align-items: center; }
-.brand img { height: 34px; width: auto; filter: invert(1); }   /* black wordmark art, shown white */
+.brand img { height: var(--logo); width: auto; filter: invert(1); transition: height .25s ease; }   /* black wordmark art, shown white */
+.is-scrolled .brand img { height: var(--logo-small); }
+@media (prefers-reduced-motion: reduce) { .site-header .bar, .brand img { transition: none; } }
 .site-header nav { display: flex; gap: 28px; }
 .site-header nav a {
   font-family: var(--label); font-weight: 700; font-size: 14px; letter-spacing: .03em;
@@ -125,7 +132,7 @@ hr { border: 0; border-top: var(--rule); margin: 26px 0; }
 }
 .site-header nav a:hover { color: var(--highlight); border-bottom-color: var(--highlight); }
 
-section, [id] { scroll-margin-top: 80px; }
+section, [id] { scroll-margin-top: var(--hdr-small); }
 
 
 /* ===========================
@@ -276,8 +283,7 @@ a:has(.next) { text-decoration: none; display: block; margin-bottom: 72px; }
 
 @media (max-width: 640px) {
   .page, .dark-band-inner, .site-header .bar, .site-footer .bar { padding-left: 16px; padding-right: 16px; }
-  .site-header .bar { height: 64px; }
-  .brand img { height: 24px; }
+  :root { --hdr: 96px; --hdr-small: 64px; --logo: 36px; --logo-small: 24px; }
   .site-header nav { gap: 16px; }
   .site-header nav a.opt { display: none; }
   .bio { padding: 36px 0 32px; }
