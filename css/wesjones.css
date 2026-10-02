@@ -244,7 +244,7 @@ li.special-item::marker { color: var(--ink); }
 
 .largehint { font-size: 14px; line-height: 1.5; color: var(--muted); padding-right: 24px; }
 .hint { font-family: var(--label); font-size: 12px; letter-spacing: .03em; text-transform: uppercase; color: var(--muted); }
-.shadowed-div { border: var(--thin); box-shadow: none; }
+.shadowed-div { border: 0; box-shadow: none; }
 
 /* Next case study: full-width black band joined to the footer, like Let’s talk on the home page */
 .next-band { display: block; background: var(--ink); color: var(--paper); text-decoration: none; border-bottom: 1px solid #333; margin-top: 56px; }
