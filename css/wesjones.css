@@ -275,3 +275,11 @@ li.special-item::marker { color: var(--ink); }
   .skills-header { margin-bottom: -4px; }
 }
 
+
+/* Section headings inside a case study: sentence case in Trade Gothic Bold No. 2.
+   The page title (h1) stays condensed caps: it is the hero of the page. */
+.compact-header .page h2, .compact-header .page h3 {
+  font-family: var(--label); font-weight: 700; text-transform: none; letter-spacing: 0; line-height: 1.15;
+}
+.compact-header .page h2 { font-size: clamp(26px, 2.6vw, 34px); }
+.compact-header .page h3 { font-size: 26px; }
