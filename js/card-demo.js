@@ -359,7 +359,9 @@
   const btn = root.querySelector('.cc-toggle');
   const sync = () => {
     const playing = running && !userPaused;
-    btn.textContent = playing ? 'Pause' : 'Play';
+    btn.innerHTML = playing
+      ? '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12"/><rect x="9.5" y="2" width="3.5" height="12"/></svg>'
+      : '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2v12l10-6z"/></svg>';
     btn.setAttribute('aria-label', playing ? 'Pause the animation' : 'Play the animation');
   };
   btn.addEventListener('click', () => {
