@@ -2,49 +2,13 @@
    black bar header, thick black rules, square bordered boxes, Trade Gothic headlines and labels,
    Libre Franklin body, black button blocks, black closing section. No rounded corners. */
 
-/* ===========================
-   FONTS
-   Overrides split each Trade Gothic font's line height evenly around its cap height (722)
-   so all-caps text sits centered in its box.
-   =========================== */
-
-@font-face { font-family: 'Trade Gothic Bold Cond 20'; src: url('../fonts/trade-gothic/TradeGothic-BoldCondTwenty.woff2') format('woff2'); font-weight: 700; font-display: swap;
-  ascent-override: 88.4%; descent-override: 16.2%; line-gap-override: 0%; }
-@font-face { font-family: 'Trade Gothic Bold 2'; src: url('../fonts/trade-gothic/TradeGothic-BoldTwo.woff2') format('woff2'); font-weight: 700; font-display: swap;
-  ascent-override: 87.6%; descent-override: 15.4%; line-gap-override: 0%; }
-
+/* Built on the Jonesco System (system.css, loaded first): fonts, tokens and base come from there.
+   This file holds what is specific to the portfolio. */
 :root {
-  --ink: #000;
-  --paper: #fff;
-  --cream: #fdf8dc;
-  --accent: #e4148c;     /* magenta, as on the art dept site */
-  --highlight: #ffe500;  /* yellow tag text and hover on black */
-  --muted: #555;
-  --rule: 4px solid var(--ink);
-  --thin: 2px solid var(--ink);
-  --wrap: 1200px;
-  --display: 'Trade Gothic Bold Cond 20', 'Libre Franklin', sans-serif;
-  --label: 'Trade Gothic Bold 2', 'Libre Franklin', sans-serif;
+  --display: var(--font-display);   /* site names for the system tokens */
+  --label: var(--font-label);
 }
-
-
-/* ===========================
-   BASE
-   =========================== */
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: 'Libre Franklin', system-ui, sans-serif;
-  font-size: 17px;
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-}
-img { display: block; max-width: 100%; height: auto; }
-a { color: inherit; }
+body { font-size: 17px; }
 p { margin: 0 0 1em; }
 mark { background: var(--highlight); }
 
@@ -309,5 +273,3 @@ li.special-item::marker { color: var(--ink); }
   .skills-header { margin-bottom: -4px; }
 }
 
-/* Text selection: yellow highlight, black text */
-::selection { background: #ffe500; color: #000; }
