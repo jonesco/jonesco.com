@@ -1,0 +1,172 @@
+/* Custom Card Creator — animated iPhone walkthrough (built by /js/card-demo.js).
+   Everything inside .cc-device is laid out in the phone's own pixels (414 × 868, screen 390 × 844)
+   and scaled to the column by the script. */
+
+.cc-demo { margin: 0; position: sticky; top: 96px; }
+.cc-device-wrap { position: relative; width: 100%; max-width: 340px; margin: 0 auto; aspect-ratio: 414 / 868; }
+.cc-fallback { display: block; width: 100%; }
+
+.cc-caption { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 18px; font-size: 14px; line-height: 1.4; }
+.cc-toggle {
+  font-family: var(--label); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+  min-width: 72px; padding: 8px 14px; border: 0; border-radius: 0; background: #000; color: #fff; cursor: pointer;
+}
+.cc-toggle:focus-visible { outline: 3px solid var(--highlight, #ffe600); outline-offset: 2px; }
+
+/* ---------- device ---------- */
+.cc-device {
+  position: absolute; top: 0; left: 0; width: 414px; height: 868px; transform-origin: 0 0;
+  padding: 12px; border-radius: 68px; background: #0c0c0d;
+  box-shadow: inset 0 0 0 1.5px #4a4a4e, inset 0 0 0 4px #1b1b1d, 0 30px 60px -20px rgba(0,0,0,.45);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; user-select: none;
+}
+.cc-device::before, .cc-device::after { content: ""; position: absolute; width: 4px; background: #2a2a2c; border-radius: 2px; }
+.cc-device::before { left: -3px; top: 190px; height: 64px; box-shadow: 0 84px 0 #2a2a2c; }
+.cc-device::after { right: -3px; top: 240px; height: 100px; }
+
+.cc-screen {
+  position: relative; width: 390px; height: 844px; border-radius: 56px; overflow: hidden;
+  background: linear-gradient(180deg, #f4f4f6 0%, #dcdce0 52%, #c9c9ce 100%); color: #000;
+  clip-path: inset(0 round 56px);
+}
+.cc-device svg { display: block; fill: currentColor; }
+
+.cc-status { position: absolute; inset: 0 0 auto; height: 54px; display: flex; align-items: center; justify-content: space-between; padding: 4px 30px 0 52px; }
+.cc-time { font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
+.cc-island { position: absolute; left: 50%; top: 11px; width: 125px; height: 37px; margin-left: -62.5px; border-radius: 20px; background: #000; }
+.cc-status-icons { display: flex; align-items: center; gap: 6px; }
+.cc-status-icons svg:nth-child(1) { width: 18px; height: 12px; }
+.cc-status-icons svg:nth-child(2) { width: 16px; height: 12px; }
+.cc-status-icons svg:nth-child(3) { width: 27px; height: 13px; }
+
+.cc-nav { position: absolute; top: 58px; left: 0; right: 0; height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; }
+.cc-title { font-size: 21px; font-weight: 700; letter-spacing: -.02em; }
+.cc-done { font-size: 18px; font-weight: 600; color: #000; transition: opacity .15s, transform .15s; }
+.cc-done.pressed { opacity: .35; }
+
+/* ---------- card ---------- */
+.cc-card {
+  --ink: rgba(0,0,0,.2);
+  position: absolute; left: 30px; top: 124px; width: 330px; height: 208px; border-radius: 14px; overflow: hidden;
+  background: #1d1d1f; color: var(--ink);
+  box-shadow: 0 1px 2px rgba(0,0,0,.18), 0 14px 28px -10px rgba(0,0,0,.4);
+  transition: background-color .35s ease, transform .7s cubic-bezier(.2,.8,.2,1), box-shadow .7s;
+}
+.cc-card.is-dark { --ink: rgba(255,255,255,.2); }
+.cc-brand { position: absolute; left: 20px; top: 17px; display: flex; align-items: center; gap: 7px; font-size: 15px; font-weight: 600; letter-spacing: .2em; }
+.cc-brand svg { width: 24px; height: 15px; }
+.cc-number { position: absolute; left: 20px; bottom: 17px; font-size: 23px; letter-spacing: .06em; font-variant-numeric: tabular-nums; }
+.cc-number span { font-size: 15px; letter-spacing: .15em; margin-right: 6px; vertical-align: 3px; }
+.cc-mc { position: absolute; right: 20px; bottom: 14px; width: 58px; height: 50px; }
+.cc-mc i { position: absolute; top: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--ink); }
+.cc-mc i:first-child { left: 0; } .cc-mc i:nth-child(2) { right: 0; }
+.cc-mc span { position: absolute; bottom: 0; left: -4px; right: -4px; text-align: center; font-size: 9.5px; font-weight: 600; letter-spacing: .01em; }
+
+.cc-card-art { position: absolute; inset: 0; transition: opacity .35s; }
+.cc-emoji, .cc-fly {
+  position: absolute; left: 50%; top: 50%; font-size: 72px; line-height: 1; color: #000;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; will-change: transform;
+}
+.cc-fly { left: 0; top: 0; z-index: 6; }
+.cc-emoji.sel { outline: 1.5px dashed rgba(0,0,0,.45); outline-offset: 3px; }
+.cc-card.is-dark .cc-emoji.sel { outline-color: rgba(255,255,255,.6); }
+
+.cc-shine { position: absolute; inset: 0; background: linear-gradient(105deg, transparent 38%, rgba(255,255,255,.55) 50%, transparent 62%); transform: translateX(-130%); pointer-events: none; }
+
+/* ---------- toolbar ---------- */
+.cc-tools { position: absolute; top: 356px; left: 30px; right: 30px; height: 64px; display: flex; align-items: center; justify-content: space-between; transition: opacity .3s; }
+.cc-swatch { width: 60px; height: 38px; border-radius: 6px; background: #1d1d1f; box-shadow: 0 1px 2px rgba(0,0,0,.2), 0 4px 10px rgba(0,0,0,.25); transition: background-color .35s, transform .15s; }
+.cc-add { width: 62px; height: 62px; border-radius: 50%; background: #fff; color: #3a3a3c; display: grid; place-items: center; box-shadow: 0 4px 12px rgba(0,0,0,.18); transition: transform .15s; }
+.cc-add svg { width: 30px; height: 30px; }
+.cc-layers { width: 60px; display: flex; justify-content: flex-end; }
+.cc-layers svg { width: 30px; height: 26px; }
+.cc-swatch.pressed, .cc-add.pressed { transform: scale(.9); }
+
+.cc-success { position: absolute; top: 470px; left: 0; right: 0; text-align: center; opacity: 0; transform: translateY(14px); transition: opacity .4s .55s, transform .5s .55s; }
+.cc-success strong { display: block; font-size: 28px; font-weight: 700; letter-spacing: -.02em; }
+.cc-success span { display: block; margin-top: 6px; font-size: 17px; color: #555; }
+
+/* ---------- panel ---------- */
+.cc-panel { position: absolute; left: 0; right: 0; top: 440px; bottom: 0; background: #2c2c2e; color: #fff; transition: transform .45s cubic-bezier(.3,.7,.2,1); }
+.cc-field { position: absolute; top: 10px; left: 10px; right: 10px; height: 38px; border-radius: 10px; background: #4a4a4e; display: flex; align-items: center; gap: 8px; padding: 0 12px; font-size: 17px; color: #a1a1a6; transition: background-color .15s; }
+.cc-field.pressed { background: #5c5c60; }
+.cc-field svg { width: 17px; height: 17px; flex: none; }
+.cc-query { color: #fff; }
+.cc-caret { display: none; width: 2px; height: 22px; margin-left: -6px; background: #0a84ff; animation: cc-blink 1s steps(1) infinite; }
+.cc-panel.typing .cc-placeholder { display: none; }
+.cc-panel.typing .cc-caret { display: block; }
+@keyframes cc-blink { 50% { opacity: 0; } }
+
+.cc-view { position: absolute; left: 0; right: 0; top: 56px; bottom: 0; opacity: 0; transition: opacity .25s; }
+.cc-panel[data-view="emoji"] .cc-v-emoji,
+.cc-panel[data-view="search"] .cc-v-search,
+.cc-panel[data-view="color"] .cc-v-color { opacity: 1; }
+
+.cc-groups { display: flex; gap: 22px; padding: 4px 8px 0; overflow: hidden; }
+.cc-group b { display: block; height: 26px; padding-left: 6px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .02em; color: #8e8e93; white-space: nowrap; }
+.cc-grid { display: grid; grid-auto-flow: column; grid-template-rows: repeat(5, 44px); grid-auto-columns: 46px; font-size: 33px; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; }
+.cc-grid span { display: grid; place-items: center; }
+.cc-cats { position: absolute; left: 10px; right: 14px; top: 262px; height: 36px; display: flex; align-items: center; justify-content: space-between; color: #8e8e93; }
+.cc-cats span { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; font-size: 18px; filter: grayscale(1) brightness(1.4); opacity: .55; }
+.cc-cats span.on { background: #48484c; opacity: .9; filter: grayscale(1); }
+.cc-cats svg { width: 24px; height: 19px; }
+
+.cc-results { display: flex; gap: 12px; height: 54px; align-items: center; padding: 0 14px; font-size: 34px; font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; }
+.cc-results span { opacity: 0; transform: scale(.6); transition: opacity .25s, transform .3s cubic-bezier(.3,1.5,.5,1); }
+.cc-results.on span { opacity: 1; transform: none; }
+.cc-results.on span:nth-child(2) { transition-delay: .04s; } .cc-results.on span:nth-child(3) { transition-delay: .08s; }
+.cc-results.on span:nth-child(4) { transition-delay: .12s; } .cc-results.on span:nth-child(5) { transition-delay: .16s; }
+.cc-results span.pressed { transform: scale(.85); }
+
+.cc-kb { position: absolute; top: 62px; left: 0; right: 0; padding: 0 3px; transform: translateY(24px); transition: transform .35s cubic-bezier(.3,.7,.2,1); }
+.cc-panel[data-view="search"] .cc-kb { transform: none; }
+.cc-kb-row { display: flex; justify-content: center; gap: 6px; height: 42px; margin-bottom: 11px; }
+.cc-kb-mid { padding: 0 18px; }
+.cc-key { flex: 0 0 33px; display: grid; place-items: center; border-radius: 5px; background: #6b6b6f; font-size: 22px; box-shadow: 0 1px 0 rgba(0,0,0,.45); transition: background-color .08s; }
+.cc-key.pressed { background: #a5a5aa; }
+.cc-key-fn { flex: 0 0 44px; background: #47474b; }
+.cc-key-fn svg { width: 22px; height: 18px; }
+.cc-kb-row:nth-child(3) .cc-key-fn:first-child { margin-right: 8px; }
+.cc-kb-row:nth-child(3) .cc-key-fn:last-child { margin-left: 8px; }
+.cc-key-sm { font-size: 16px; }
+.cc-key-space { flex: 1; font-size: 16px; }
+.cc-key-go { flex: 0 0 88px; font-size: 16px; background: #0a84ff; }
+
+.cc-v-color { top: 0; background: #2c2c2e; }
+.cc-color-label { padding: 20px 20px 0; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .02em; color: #8e8e93; }
+.cc-dots { display: grid; grid-template-columns: repeat(4, 62px); justify-content: center; gap: 22px 26px; margin-top: 22px; }
+.cc-dot { width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center; color: rgba(0,0,0,.7); transition: transform .15s; }
+.cc-dot.is-dark { color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,.15); }
+.cc-dot svg { width: 28px; height: 28px; opacity: 0; transform: scale(.4); transition: opacity .15s, transform .25s cubic-bezier(.3,1.6,.5,1); }
+.cc-dot.on svg { opacity: 1; transform: none; }
+.cc-dot.pressed { transform: scale(.88); }
+.cc-color-hint { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 34px; font-size: 15px; color: #8e8e93; }
+.cc-color-hint svg { width: 20px; height: 20px; }
+
+.cc-home { position: absolute; left: 50%; bottom: 8px; width: 134px; height: 5px; margin-left: -67px; border-radius: 3px; background: #fff; transition: background-color .4s; z-index: 8; }
+
+/* ---------- touches ---------- */
+.cc-touch {
+  position: absolute; left: -24px; top: -24px; width: 48px; height: 48px; border-radius: 50%; z-index: 9; pointer-events: none;
+  background: rgba(255,255,255,.55); box-shadow: 0 0 0 1px rgba(0,0,0,.12), 0 4px 14px rgba(0,0,0,.28);
+  opacity: 0; transition: opacity .2s;
+}
+.cc-touch::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: rgba(120,120,128,.35); transform: scale(.4); opacity: 0; transition: transform .14s, opacity .14s; }
+.cc-touch.on { opacity: 1; }
+.cc-touch.down::after { transform: scale(.85); opacity: 1; }
+
+/* ---------- finished card ---------- */
+.is-done .cc-panel { transform: translateY(100%); }
+.is-done .cc-tools, .is-done .cc-done { opacity: 0; }
+.is-done .cc-card { transform: translateY(96px) scale(1.06); box-shadow: 0 2px 4px rgba(0,0,0,.15), 0 30px 50px -16px rgba(0,0,0,.45); }
+.is-done .cc-shine { animation: cc-shine 1.1s .5s ease-in-out both; }
+.is-done .cc-success { opacity: 1; transform: none; }
+.is-done .cc-home { background: #111; }
+.is-resetting .cc-card-art { opacity: 0; }
+@keyframes cc-shine { to { transform: translateX(130%); } }
+
+@media (max-width: 640px) {
+  .cc-demo { position: static; }
+  .cc-device-wrap { max-width: 300px; }
+}
