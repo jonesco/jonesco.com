@@ -57,7 +57,6 @@
     check: '<svg viewBox="0 0 24 24"><path d="m5 12.5 4.6 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     shift: '<svg viewBox="0 0 20 20"><path d="M10 2.5 2.5 10.5h4.2v6.5h6.6v-6.5h4.2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>',
     del: '<svg viewBox="0 0 26 20"><path d="M8 2h15.5c.8 0 1.5.7 1.5 1.5v13c0 .8-.7 1.5-1.5 1.5H8L1 10Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m12 6.5 7 7m0-7-7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
-    logo: '<svg viewBox="0 0 26 16"><path d="M2.5 13.5C2.5 6 5.5 2.5 8.5 2.5s4.5 4 4.5 5.5 1.5 5.5 4.5 5.5 6-3.5 6-11" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/></svg>',
   };
 
   const keyRow = (keys) => keys.split('').map((k) => `<span class="cc-key" data-key="${k}">${k}</span>`).join('');
@@ -73,7 +72,7 @@
       <div class="cc-nav"><span class="cc-title">Create your card</span><span class="cc-done">Done</span></div>
       <div class="cc-card">
         <div class="cc-card-art"></div>
-        <div class="cc-brand">${icon.logo}<span>NETSPEND</span></div>
+        <div class="cc-brand"></div>
         <div class="cc-number"><span>••••</span> 3456</div>
         <div class="cc-mc"><i></i><i></i><span>mastercard</span></div>
         <div class="cc-shine"></div>

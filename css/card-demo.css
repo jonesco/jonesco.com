@@ -55,8 +55,10 @@
   transition: background-color .35s ease, transform .7s cubic-bezier(.2,.8,.2,1), box-shadow .7s;
 }
 .cc-card.is-dark { --ink: rgba(255,255,255,.2); }
-.cc-brand { position: absolute; left: 20px; top: 17px; display: flex; align-items: center; gap: 7px; font-size: 15px; font-weight: 600; letter-spacing: .2em; }
-.cc-brand svg { width: 24px; height: 15px; }
+.cc-brand {
+  position: absolute; left: 20px; top: 18px; width: 159px; height: 17px; background: var(--ink);
+  -webkit-mask: url(/images/work/netspend-logo.png) no-repeat 0 0 / 100% 100%; mask: url(/images/work/netspend-logo.png) no-repeat 0 0 / 100% 100%;
+}
 .cc-number { position: absolute; left: 20px; bottom: 17px; font-size: 23px; letter-spacing: .06em; font-variant-numeric: tabular-nums; }
 .cc-number span { font-size: 15px; letter-spacing: .15em; margin-right: 6px; vertical-align: 3px; }
 .cc-mc { position: absolute; right: 20px; bottom: 14px; width: 58px; height: 50px; }
