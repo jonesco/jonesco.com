@@ -283,3 +283,26 @@ li.special-item::marker { color: var(--ink); }
 }
 .compact-header .page h2 { font-size: clamp(26px, 2.6vw, 34px); }
 .compact-header .page h3 { font-size: 26px; }
+
+/* ---------- Takes ---------- */
+/* The take is the page hero, so its title stays condensed caps; the list titles are sentence case. */
+.take article { max-width: 880px; }
+.take h1 { font-size: clamp(44px, 6vw, 80px); }   /* gets the case-study title rule from .page > div:first-child h1 */
+.take-body { max-width: 36em; }
+.take-body p { font-size: clamp(20px, 1.9vw, 24px); line-height: 1.55; margin: 0 0 1em; }
+.take-meta, .take-also { font-family: var(--label); font-weight: 700; text-transform: uppercase; letter-spacing: .03em; font-size: 14px; color: var(--muted); margin: 40px 0 0; padding-top: 16px; border-top: var(--thin); }
+.take-also { margin-top: 10px; padding-top: 0; border-top: 0; }
+.take-meta a, .take-also a { color: var(--ink); }
+.take-meta a:hover, .take-also a:hover { color: var(--accent); }
+
+.takes-intro { font-size: clamp(20px, 1.9vw, 24px); margin: 0 0 32px; }
+.takes-list { list-style: none; margin: 0 0 80px; padding: 0; max-width: 880px; }
+.takes-list li { border-bottom: var(--thin); }
+.takes-list a { display: grid; grid-template-columns: 140px 1fr auto; gap: 8px 24px; align-items: baseline; padding: 22px 0; text-decoration: none; color: inherit; }
+.take-num, .take-date { font-family: var(--label); font-weight: 700; text-transform: uppercase; letter-spacing: .03em; font-size: 13px; color: var(--muted); }
+.take-title { font-family: var(--label); font-weight: 700; font-size: 26px; line-height: 1.15; transition: color .15s; }
+.takes-list a:hover .take-title { color: var(--accent); }
+@media (max-width: 640px) {
+  .takes-list a { grid-template-columns: 1fr; }
+  .take-date { order: 3; }
+}
