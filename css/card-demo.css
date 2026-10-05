@@ -55,16 +55,16 @@
   transition: background-color .35s ease, transform .7s cubic-bezier(.2,.8,.2,1), box-shadow .7s;
 }
 .cc-card.is-dark { --ink: rgba(255,255,255,.2); --logo: rgba(255,255,255,.5); }
-.cc-brand {
-  position: absolute; left: 20px; top: 18px; width: 159px; height: 17px; background: var(--logo);
+.cc-brand { position: absolute; left: 20px; top: 18px; width: 159px; height: 17px; }
+.cc-brand i {
+  position: absolute; inset: 0; background: var(--logo);
   -webkit-mask: url(/images/work/netspend-logo.png) no-repeat 0 0 / 100% 100%; mask: url(/images/work/netspend-logo.png) no-repeat 0 0 / 100% 100%;
 }
 .cc-number { position: absolute; left: 20px; bottom: 17px; font-size: 23px; letter-spacing: .06em; font-variant-numeric: tabular-nums; }
 .cc-number span { font-size: 15px; letter-spacing: .15em; margin-right: 6px; vertical-align: 3px; }
-.cc-mc { position: absolute; right: 20px; bottom: 14px; width: 58px; height: 50px; }
-.cc-mc i { position: absolute; top: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--ink); }
-.cc-mc i:first-child { left: 0; } .cc-mc i:nth-child(2) { right: 0; }
-.cc-mc span { position: absolute; bottom: 0; left: -4px; right: -4px; text-align: center; font-size: 9.5px; font-weight: 600; letter-spacing: .01em; }
+/* Mastercard Symbol: full color only on card fronts and screens (no wordmark, tint or transparency since the 2019 mark).
+   Sits above the card art so emoji never cover it. */
+.cc-mc { position: absolute; right: 20px; bottom: 17px; width: 58px; height: 36px; z-index: 1; }
 
 .cc-card-art { position: absolute; inset: 0; transition: opacity .35s; }
 .cc-emoji, .cc-fly {

@@ -72,9 +72,9 @@
       <div class="cc-nav"><span class="cc-title">Create your card</span><span class="cc-done">Done</span></div>
       <div class="cc-card">
         <div class="cc-card-art"></div>
-        <div class="cc-brand"></div>
+        <div class="cc-brand"><i></i></div>
         <div class="cc-number"><span>••••</span> 3456</div>
-        <div class="cc-mc"><i></i><i></i><span>mastercard</span></div>
+        <svg class="cc-mc" viewBox="0 0 58 36"><circle cx="18" cy="18" r="18" fill="#eb001b"/><circle cx="40" cy="18" r="18" fill="#f79e1b"/><path d="M29 3.752A18 18 0 0 1 29 32.248 18 18 0 0 1 29 3.752Z" fill="#ff5f00"/></svg>
         <div class="cc-shine"></div>
       </div>
       <div class="cc-tools">
