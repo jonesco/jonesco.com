@@ -24,6 +24,21 @@ THUMB = {'firefly': 'firefly_thumb.jpg', 'wellsmith': 'wellsmith_thumb.jpg', 'ir
          'rembrandt': 'rembrandt_thumb.jpg', 'partstree': 'partstree_thumb.jpg'}
 # archive numbers, shown like the case study numbers
 NUM = {'firefly': 4565, 'wellsmith': 7828, 'ironsight': 1647, 'prime': 4832, 'rta': 5973, 'youga': 9650, 'dort': 4864, 'travelocity': 3966, 'joule': 3773, 'vitaminwater': 6016, 'rembrandt': 9118, 'partstree': 6663}
+# one sentence under each archive tile, drawn from the old project copy
+DESC = {
+    'firefly': 'An interactive trade show display that launched Input/Output’s Firefly before the system was ready to demo.',
+    'wellsmith': 'A healthcare web portal and mobile app that track patient compliance across medication, activity, nutrition and vitals.',
+    'ironsight': 'Logo design for Ironsight Brewers.',
+    'prime': 'Logo design for Prime Institutional Group.',
+    'rta': 'Sports promotional items that reminded Cleveland fans the RTA was the best way to get to the big game.',
+    'youga': 'A yoga app stretched into personalized workouts, with guided sessions, video and a yoga mix tape.',
+    'dort': 'A text message and voicemail campaign that let beer drinkers reconnect with an old friend, Dortmunder Gold.',
+    'travelocity': 'A cross-promotion pairing Cleveland Hopkins International Airport with Travelocity, online and offline.',
+    'joule': 'Logo design for Joule Energy.',
+    'vitaminwater': 'A brand campaign to make vitaminwater the drink of the next creative generation.',
+    'rembrandt': 'A campaign for the Cleveland Museum of Art’s rare Rembrandt exhibition, from a bus wrap to a Facebook app.',
+    'partstree': 'A specialized e-commerce platform that finds the right part by model number, brand or serial number.',
+}
 # page title as on the old page, its category line, and the name used on the archive grid
 META = {
     'firefly': ('Firefly', 'product launch', 'Firefly'),
@@ -204,6 +219,7 @@ def index_page():
               <div class="tile-label">
                 <div class="csid"><p>#{NUM[s]}</p></div>
                 <h2><strong>{e(META[s][2])}</strong></h2>
+                <p class="tile-description">{e(DESC[s])}</p>
               </div>
             </div>
           </a>''' for s in ORDER)
