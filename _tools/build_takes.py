@@ -11,7 +11,7 @@ import datetime, html, os, random, re, subprocess, sys, tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://jonesco.com'
-CSS_V = 28
+CSS_V = 29
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
 

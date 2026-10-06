@@ -317,5 +317,5 @@ li.special-item::marker { color: var(--ink); }
 .archive-back { font-family: var(--label); font-weight: 700; text-transform: uppercase; letter-spacing: .03em; font-size: 14px; margin: 56px 0 0; }
 .archive-back a { color: var(--ink); }
 .archive-back a:hover { color: var(--accent); }
-.archive-index > div:first-child h1 { border-bottom: 0; padding-bottom: 0; }
+.compact-header .page.archive-index > div:first-child h1 { border-bottom: 0; padding-bottom: 0; }
 .compact-header .tile-label h2 { font-size: 26px; }   /* tile titles stay the home-page size on inner pages */
