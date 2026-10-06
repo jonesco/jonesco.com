@@ -22,6 +22,8 @@ THUMB = {'firefly': 'firefly_thumb.jpg', 'wellsmith': 'wellsmith_thumb.jpg', 'ir
          'prime': 'prime_thumb.jpg', 'rta': 'rta-shirts_thumb.jpg', 'youga': 'youga_thumb.png', 'dort': 'glbc_thumb.jpg',
          'travelocity': 'travelocity_thumb.jpg', 'joule': 'joule_thumb.png', 'vitaminwater': 'vw_thumb.jpg',
          'rembrandt': 'rembrandt_thumb.jpg', 'partstree': 'partstree_thumb.jpg'}
+# archive numbers, shown like the case study numbers
+NUM = {'firefly': 4565, 'wellsmith': 7828, 'ironsight': 1647, 'prime': 4832, 'rta': 5973, 'youga': 9650, 'dort': 4864, 'travelocity': 3966, 'joule': 3773, 'vitaminwater': 6016, 'rembrandt': 9118, 'partstree': 6663}
 # page title as on the old page, its category line, and the name used on the archive grid
 META = {
     'firefly': ('Firefly', 'product launch', 'Firefly'),
@@ -184,7 +186,7 @@ def project_page(p, nxt):
     <div id="root">
       <div class="page archive-page">
         <div>
-          <h5 id="rcorners1">{e(p["cat"])}</h5>
+          <h5 id="rcorners1">Project #{NUM[p["slug"]]}</h5>
           <h1><strong>{e(p["title"])}</strong></h1>{desc}
         </div>{media(p["hero"])}{blocks}
         <p class="archive-back"><a href="/archive/">All archive projects</a></p>
@@ -200,7 +202,7 @@ def index_page():
             <div class="tile-card">
               <div class="tile-image"><img src="/images/archive/thumb/{THUMB[s]}" alt="" /></div>
               <div class="tile-label">
-                <div class="csid"><p>{e(META[s][1])}</p></div>
+                <div class="csid"><p>#{NUM[s]}</p></div>
                 <h2><strong>{e(META[s][2])}</strong></h2>
               </div>
             </div>
@@ -209,9 +211,7 @@ def index_page():
     <div id="root">
       <div class="page archive-index">
         <div>
-          <h5 id="rcorners1">Archive</h5>
-          <h1><strong>Earlier work</strong></h1>
-          <h4>Logos, campaigns and art direction from the original jonesco.com.</h4>
+          <h1><strong>/Archive</strong></h1>
         </div>
         <div class="tile-grid">
 {tiles}
