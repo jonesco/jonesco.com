@@ -161,8 +161,8 @@ section, [id] { scroll-margin-top: var(--hdr-small); }
 .contacts a {
   display: flex; align-items: center; gap: 14px;
   padding: 14px 0; border-bottom: 2px solid #444;
-  font-family: var(--label); font-weight: 700; font-size: 16px; letter-spacing: .03em;
-  text-transform: uppercase; text-decoration: none; color: var(--paper);
+  font-family: var(--label); font-weight: 700; font-size: 18px; letter-spacing: 0;
+  text-transform: none; text-decoration: none; color: var(--paper);   /* sentence case; the email stays lowercase */
 }
 .contacts a:hover { color: var(--highlight); }
 .contactarea i { width: 20px; text-align: center; font-size: 18px; color: var(--highlight); }
