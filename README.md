@@ -7,7 +7,7 @@ Wes Jones's portfolio. Plain HTML and CSS — no build step, no dependencies.
 - `index.html` — home page (bio, what I bring, case study tiles, contact)
 - `<case-study>.html` — one file per case study; the URL drops the `.html` (`/fund-manager` serves `fund-manager.html`)
 - `flatbed-privacy.html`, `flatbed-support.html` — standalone pages for the Flatbed Mac app
-- `css/wesjones.css` — all site styling; `trade/` and `fonts/` hold the webfonts
+- `css/jonesco.css` — all site styling; `trade/` and `fonts/` hold the webfonts
 - `images/` — page images; `images/work/` holds case study art
 - `llms.txt`, `sitemap.xml`, `robots.txt` — search and AI crawler files
 
