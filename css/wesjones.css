@@ -308,7 +308,7 @@ li.special-item::marker { color: var(--ink); }
 }
 
 /* ---------- Archive (original jonesco.com work; noindexed, unlinked from the main site) ---------- */
-.archive-index .tile-image { aspect-ratio: 1 / 1; }          /* the old thumbnails are square */
+.archive-index .tile-image img { object-position: center; }   /* same 4:3 tiles as home; the old square thumbnails crop from the middle */
 .archive-page img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
 .archive-page > div > img, .archive-page > div:not([class]) > img { margin-top: 24px; }
 .archive-media { margin: 24px 0 8px; align-items: center; }
