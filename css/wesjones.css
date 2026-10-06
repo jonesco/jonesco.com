@@ -327,5 +327,5 @@ body.pin-footer .page { width: 100%; box-sizing: border-box; }   /* keep the ful
 /* 404: the heading curses, big, in Trade Gothic Bold Condensed No. 20 */
 .compact-header .page > div:first-child h1.grawlix { font-family: var(--display); font-weight: 700; font-size: clamp(82px, 18.7vw, 255px); line-height: .9; letter-spacing: -.01em; }
 .home-link { font-family: var(--label); font-weight: 700; text-transform: uppercase; letter-spacing: .03em; font-size: 18px; margin: 8px 0 0; }
-.home-link a { color: var(--ink); }
-.home-link a:hover { color: var(--accent); }
+.home-link a { color: var(--accent); text-decoration: none; }
+.home-link a:hover { color: var(--ink); }
