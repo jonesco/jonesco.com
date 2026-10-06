@@ -324,3 +324,8 @@ li.special-item::marker { color: var(--ink); }
 body.pin-footer { box-sizing: border-box; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
 body.pin-footer > .site-footer { margin-top: auto; }
 body.pin-footer .page { width: 100%; box-sizing: border-box; }   /* keep the full column width inside the flex body */
+/* 404: the heading curses, big, in Trade Gothic Bold Condensed No. 20 */
+.compact-header .page > div:first-child h1.grawlix { font-family: var(--display); font-weight: 700; font-size: clamp(96px, 22vw, 300px); line-height: .9; letter-spacing: -.01em; }
+.home-link { font-family: var(--label); font-weight: 700; text-transform: uppercase; letter-spacing: .03em; font-size: 18px; margin: 8px 0 0; }
+.home-link a { color: var(--ink); }
+.home-link a:hover { color: var(--accent); }
