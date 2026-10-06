@@ -317,3 +317,4 @@ li.special-item::marker { color: var(--ink); }
 .archive-back { font-family: var(--label); font-weight: 700; text-transform: uppercase; letter-spacing: .03em; font-size: 14px; margin: 56px 0 0; }
 .archive-back a { color: var(--ink); }
 .archive-back a:hover { color: var(--accent); }
+.archive-index > div:first-child h1 { border-bottom: 0; padding-bottom: 0; }
