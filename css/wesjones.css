@@ -319,3 +319,8 @@ li.special-item::marker { color: var(--ink); }
 .archive-back a:hover { color: var(--accent); }
 .compact-header .page.archive-index > div:first-child h1 { border-bottom: 0; padding-bottom: 0; margin-bottom: 40px; }
 .compact-header .tile-label h2 { font-size: 26px; }   /* tile titles stay the home-page size on inner pages */
+
+/* Short pages (404): the footer sits at the bottom of the window */
+body.pin-footer { box-sizing: border-box; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+body.pin-footer > .site-footer { margin-top: auto; }
+body.pin-footer .page { width: 100%; box-sizing: border-box; }   /* keep the full column width inside the flex body */
