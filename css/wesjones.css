@@ -1,4 +1,4 @@
-/* wesjones.info — styled after jonescoartdept.com:
+/* jonesco.com (formerly wesjones.info), styled after jonescoartdept.com:
    black bar header, thick black rules, square bordered boxes, Trade Gothic headlines and labels,
    Libre Franklin body, black button blocks, black closing section. No rounded corners. */
 
@@ -306,3 +306,14 @@ li.special-item::marker { color: var(--ink); }
   .takes-list a { grid-template-columns: 1fr; }
   .take-date { order: 3; }
 }
+
+/* ---------- Archive (original jonesco.com work; noindexed, unlinked from the main site) ---------- */
+.archive-index .tile-image { aspect-ratio: 1 / 1; }          /* the old thumbnails are square */
+.archive-page img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+.archive-page > div > img, .archive-page > div:not([class]) > img { margin-top: 24px; }
+.archive-media { margin: 24px 0 8px; align-items: center; }
+.archive-video { position: relative; aspect-ratio: 16 / 9; background: var(--ink); margin-top: 24px; }
+.archive-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.archive-back { font-family: var(--label); font-weight: 700; text-transform: uppercase; letter-spacing: .03em; font-size: 14px; margin: 56px 0 0; }
+.archive-back a { color: var(--ink); }
+.archive-back a:hover { color: var(--accent); }

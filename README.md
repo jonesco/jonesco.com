@@ -1,4 +1,4 @@
-# wesjones.info
+# jonesco.com
 
 Wes Jones's portfolio. Plain HTML and CSS — no build step, no dependencies.
 

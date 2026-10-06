@@ -1,10 +1,11 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Disallow: /archive
+Disallow: /images/archive
 
-Sitemap: https://wesjones.info/sitemap.xml
+Sitemap: https://jonesco.com/sitemap.xml
 
 # AI crawler guidance
 # Full plain-text version of this site available for AI systems at:
-# https://wesjones.info/llms.txt
+# https://jonesco.com/llms.txt
 

@@ -10,8 +10,8 @@ and the takes entries in sitemap.xml. Standard library only.
 import datetime, html, os, random, re, subprocess, sys, tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE = 'https://wesjones.info'
-CSS_V = 25
+SITE = 'https://jonesco.com'
+CSS_V = 26
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
 
@@ -105,8 +105,8 @@ def page(title, desc, url, body, og_image=None, extra_head=''):
   <body>
     <header class="site-header">
       <div class="bar">
-        <a class="brand" href="/" aria-label="Wes Jones, home">
-          <img src="/images/wesjones-logo.svg" alt="Wes Jones, Principal Product Designer" />
+        <a class="brand" href="/" aria-label="Jonesco, home">
+          <img src="/images/jonesco-logo.svg" alt="Jonesco" />
         </a>
         <nav>
           <a href="/#work">Work</a>
@@ -164,8 +164,8 @@ def take_page(t, nxt):
     desc = desc if len(desc) <= 200 else desc[:desc.rfind(' ', 0, 197)] + '…'
     jsonld = ('\n    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting",'
               f'"headline":{json_str(curl(t["title"]))},"datePublished":"{t["date"]}","url":"{url}",'
-              '"author":{"@type":"Person","name":"Wes Jones","url":"https://wesjones.info"}}</script>')
-    return page(f'{curl(t["title"])} | Wes Jones', desc, url, body, f'{SITE}/images/takes/{t["slug"]}.png', jsonld)
+              '"author":{"@type":"Person","name":"Wes Jones","url":"https://jonesco.com"}}</script>')
+    return page(f'{curl(t["title"])} | Jonesco', desc, url, body, f'{SITE}/images/takes/{t["slug"]}.png', jsonld)
 
 
 def json_str(s):
@@ -191,7 +191,7 @@ def index_page(takes):
         </div>
       </div>
     </div>'''
-    return page('Takes | Wes Jones', 'Short takes on design, AI and product by Wes Jones.', f'{SITE}/takes/', body,
+    return page('Takes | Jonesco', 'Short takes on design, AI and product by Wes Jones.', f'{SITE}/takes/', body,
                 f'{SITE}/images/takes/{takes[0]["slug"]}.png' if takes else None)
 
 
@@ -233,7 +233,7 @@ h1{{margin:0;font-family:var(--font-display);font-weight:700;text-transform:uppe
 </style></head><body><div class="card">
 <div class="tag">Take #{t["number"]}</div>
 <h1>{html.escape(curl(t["title"]))}</h1>
-<div class="foot"><span>WES JONES</span><b>wesjones.info/takes/{t["slug"]}</b></div>
+<div class="foot"><span>WES JONES</span><b>jonesco.com/takes/{t["slug"]}</b></div>
 </div></body></html>'''
 
 

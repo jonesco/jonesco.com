@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://wesjones.info/</loc>
+    <loc>https://jonesco.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://wesjones.info/fund-manager</loc>
+    <loc>https://jonesco.com/fund-manager</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://wesjones.info/ns_pattern_library</loc>
+    <loc>https://jonesco.com/ns_pattern_library</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://wesjones.info/custom_card_creator</loc>
+    <loc>https://jonesco.com/custom_card_creator</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://wesjones.info/wayblazer</loc>
+    <loc>https://jonesco.com/wayblazer</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://wesjones.info/magicstaff</loc>
+    <loc>https://jonesco.com/magicstaff</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://wesjones.info/cpay</loc>
+    <loc>https://jonesco.com/cpay</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- takes -->
   <url>
-    <loc>https://wesjones.info/takes/</loc>
+    <loc>https://jonesco.com/takes/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://wesjones.info/takes/more-arms</loc>
+    <loc>https://jonesco.com/takes/more-arms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://wesjones.info/takes/agent-count</loc>
+    <loc>https://jonesco.com/takes/agent-count</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

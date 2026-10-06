@@ -10,7 +10,7 @@ This folder starts with `_`, so it is never published; the build writes the publ
    ---
    title: The take, as a sentence.
    date: 2026-10-04
-   slug: the-slug            # the URL: wesjones.info/takes/the-slug
+   slug: the-slug            # the URL: jonesco.com/takes/the-slug
    number: 123456            # random six digits, shown as Take #123456; never reuse one
    tags: [ai, design]
    linkedin:                 # paste post URLs here after cross-posting (see below)
@@ -28,7 +28,7 @@ The build writes `takes/index.html`, `takes/<slug>.html`, `feed.xml`, the share 
 `images/takes/` and the takes entries in `sitemap.xml`. Don't edit those by hand.
 
 ## Cross-posting (stub)
-wesjones.info is the source of truth; other channels point back to it.
+jonesco.com is the source of truth; other channels point back to it.
 - **LinkedIn** (primary): post the text, end with the take's URL. Attach `images/takes/<slug>.png`.
 - **X / Bluesky**: the title plus the URL; the share image shows automatically from the page.
 - After posting, paste each post's URL into the take's `linkedin:`, `x:` or `bluesky:` field and rebuild.
