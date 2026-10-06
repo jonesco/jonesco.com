@@ -155,7 +155,7 @@ section, [id] { scroll-margin-top: var(--hdr-small); }
 
 .dark-band:has(.contact-header) { padding-bottom: 56px; border-bottom: 1px solid #333; }
 .contactarea { max-width: 560px; }
-.contactarea h5 { border-bottom-color: var(--paper); font-size: 28px; line-height: 1.1; padding-bottom: 12px; }   /* tighter than the global h5 (24px): the name sits close to its rule */
+.contactarea h5 { border-bottom-color: var(--paper); font-size: 28px; line-height: 1.1; padding-bottom: 40px; }   /* more room between the name and its rule than the global h5 (24px) */
 .contactarea > br, .contacts p:empty { display: none; }
 .contacts { display: flex; flex-direction: column; }
 .contacts a {
