@@ -13,7 +13,7 @@ import html, json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://jonesco.com'
-CSS_V = 30
+CSS_V = 31
 
 # grid order from the old home page (Wayblazer skipped: it is a case study on this site), PartsTree last
 ORDER = ['firefly', 'wellsmith', 'ironsight', 'prime', 'rta', 'youga', 'dort', 'travelocity',
