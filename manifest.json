@@ -3,13 +3,13 @@
   "name": "Jonesco",
   "icons": [
     {
-      "src": "favicon-96x96.png",
-      "sizes": "96x96",
+      "src": "icon-192.png",
+      "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "jonesco-bug152.png",
-      "sizes": "152x152",
+      "src": "icon-512.png",
+      "sizes": "512x512",
       "type": "image/png"
     },
     {
@@ -23,4 +23,3 @@
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
-
