@@ -11,7 +11,7 @@ import datetime, html, os, random, re, subprocess, sys, tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://jonesco.com'
-CSS_V = 39
+CSS_V = 40
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
 
@@ -108,7 +108,7 @@ def page(title, desc, url, body, og_image=None, extra_head=''):
     <header class="site-header">
       <div class="bar">
         <a class="brand" href="/" aria-label="Jonesco, home">
-          <img src="/images/jonesco-logo.svg" alt="Jonesco" />
+          <picture><source media="(max-width: 329px)" srcset="/images/jonesco-logo-j.svg" /><source media="(max-width: 399px)" srcset="/images/jonesco-logo-jns.svg" /><img src="/images/jonesco-logo.svg" alt="Jonesco" /></picture>
         </a>
         <nav>
           <a href="/#work">Work</a>

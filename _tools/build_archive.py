@@ -13,7 +13,7 @@ import html, json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://jonesco.com'
-CSS_V = 39
+CSS_V = 40
 
 # grid order from the old home page (Wayblazer skipped: it is a case study on this site), PartsTree last
 ORDER = ['firefly', 'wellsmith', 'ironsight', 'prime', 'rta', 'youga', 'dort', 'travelocity',
@@ -150,7 +150,7 @@ def head(title, desc, path):
     <header class="site-header">
       <div class="bar">
         <a class="brand" href="/" aria-label="Jonesco, home">
-          <img src="/images/jonesco-logo.svg" alt="Jonesco" />
+          <picture><source media="(max-width: 329px)" srcset="/images/jonesco-logo-j.svg" /><source media="(max-width: 399px)" srcset="/images/jonesco-logo-jns.svg" /><img src="/images/jonesco-logo.svg" alt="Jonesco" /></picture>
         </a>
         <nav>
           <a href="/#work">Work</a>

@@ -89,6 +89,7 @@ body { padding-top: var(--hdr); }
 .site-header .bar { height: var(--hdr); transition: height .25s ease; }
 .is-scrolled .site-header .bar { height: var(--hdr-small); }
 .brand { display: flex; align-items: center; }
+.brand picture { display: contents; }   /* the logo steps down JONES© → JNS© → J© as the screen narrows (sources in the header markup) */
 .brand img { height: var(--logo); width: auto; filter: brightness(0) invert(1); transition: height .25s ease; }   /* charcoal wordmark art, shown pure white */
 .is-scrolled .brand img { height: var(--logo-small); }
 @media (prefers-reduced-motion: reduce) { .site-header .bar, .brand img { transition: none; } }
