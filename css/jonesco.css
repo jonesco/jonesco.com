@@ -330,3 +330,19 @@ body.pin-footer .page { width: 100%; box-sizing: border-box; }   /* keep the ful
 .home-link { font-family: var(--label); font-weight: 700; text-transform: uppercase; letter-spacing: .03em; font-size: 18px; margin: 8px 0 0; }
 .home-link a { color: var(--accent); text-decoration: none; }
 .home-link a:hover { color: var(--ink); }
+
+/* ---------- BuySellHold case study: phone screens and video ---------- */
+.bsh-hero { margin: 8px 0 0; }
+.bsh-hero video { display: block; width: min(100%, 360px); height: auto; margin: 0 auto; border: var(--rule); }
+.bsh-hero .largehint { text-align: center; }
+.bsh-phones { margin: 24px 0 8px; align-items: start; }
+.bsh-phones img, .bsh-icons img { display: block; width: 100%; height: auto; border: var(--rule); }
+.bsh-icons { margin: 24px 0 8px; max-width: 640px; }
+/* the system's black button (patterns.css .sys-btn), copied here because this site loads only system.css */
+.sys-btn { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 64px; padding: 10px 18px;
+  background: var(--ink); color: var(--paper); border: var(--thin); text-decoration: none;
+  font-family: var(--label); font-weight: 700; font-size: 15px; letter-spacing: .03em; text-transform: uppercase;
+  transition: background .15s, border-color .15s; }
+.sys-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.sys-btn .plus { font-size: 28px; font-weight: 400; line-height: 1; }
+@media (max-width: 640px) { .bsh-phones img { width: min(100%, 260px); margin: 0 auto; } .bsh-phones .largehint { text-align: center; } }
