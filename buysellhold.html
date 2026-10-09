@@ -40,7 +40,8 @@
     />
     <link rel="stylesheet" href="/fonts/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jonesco/system@1.0.0/system.css" />
-    <link rel="stylesheet" href="/css/jonesco.css?v=46" />
+    <link rel="stylesheet" href="/css/phone-video.css?v=2" />
+    <link rel="stylesheet" href="/css/jonesco.css?v=47" />
 
     <!-- Structured data for AI and search engines -->
     <script type="application/ld+json">
@@ -147,13 +148,9 @@
             </ul>
           </div>
         </div>
-        <div class="bsh-hero">
-          <div class="phone"><video src="/images/work/bsh-preview.mp4" poster="/images/work/bsh-preview-poster.jpg" autoplay muted loop playsinline aria-label="BuySellHold app preview: adding a stock, setting a range, and the card turning green to buy and purple to sell"></video></div>
-          <p class="largehint">▲ The App Store preview: add a stock, set a range, and watch the card react when the price crosses it.</p>
-        </div>
-        <hr />
-        <div>
-          <h2><strong>A designer building the real thing</strong></h2>
+        <div class="cols-2">
+          <div>
+            <h2><strong>A designer building the real thing</strong></h2>
           <p>
             I’d carried this idea for years. What changed was the tools. I designed each screen, then built the app
             in SwiftUI with Claude Code: describing what I wanted, reading what it wrote, running it on my phone and
@@ -165,6 +162,16 @@
             Working this way changed how I design. I could try an idea in the real app in minutes instead of
             describing it in a mockup, so decisions came from using the thing, not from guessing.
           </p>
+          </div>
+          <div>
+            <figure class="pv-demo">
+              <div class="pv-device"><div class="pv-body"><video class="pv-screen" src="/images/work/bsh-preview.mp4" poster="/images/work/bsh-preview-poster.jpg" autoplay muted loop playsinline aria-label="BuySellHold app preview: adding a stock, setting a range, and the card turning green to buy and purple to sell"></video></div></div>
+              <figcaption class="pv-caption">
+                <button type="button" class="pv-toggle" aria-label="Pause the video"></button>
+                <span>The App Store preview: add a stock, set a range, and watch the card react when the price crosses it.</span>
+              </figcaption>
+            </figure>
+          </div>
         </div>
         <hr />
         <div>
@@ -246,6 +253,7 @@
         <small>© <span class="yr">2026</span> Wes Jones</small>
       </div>
     </footer>
+    <script src="/js/phone-video.js?v=1" defer></script>
     <script>document.querySelectorAll('.yr').forEach(e => e.textContent = new Date().getFullYear());</script>
   </body>
 </html>

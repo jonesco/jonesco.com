@@ -332,11 +332,6 @@ body.pin-footer .page { width: 100%; box-sizing: border-box; }   /* keep the ful
 .home-link a:hover { color: var(--ink); }
 
 /* ---------- BuySellHold case study: phone screens and video ---------- */
-.bsh-hero { margin: 8px 0 0; }
-/* phone frame around app videos, like the phone in the Custom Card Creator images (a real, rounded object) */
-.phone { width: min(100%, 340px); margin: 0 auto; padding: 12px; background: #111; border-radius: 52px; box-shadow: 0 0 0 2px #2a2a2a inset; }
-.phone video, .phone img { display: block; width: 100%; height: auto; border-radius: 40px; }
-.bsh-hero .largehint { text-align: center; }
 .bsh-phones { margin: 24px 0 8px; align-items: start; }
 .bsh-phones img { display: block; width: 100%; height: auto; border: var(--rule); }
 /* the system's black button (patterns.css .sys-btn), copied here because this site loads only system.css */
