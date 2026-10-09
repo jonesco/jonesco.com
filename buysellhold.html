@@ -169,6 +169,18 @@
         </div>
         <hr />
         <div>
+          <h2><strong>Live prices, your own key</strong></h2>
+          <p>
+            Prices come from Finnhub, a market data service. Instead of running a server and paying for a data feed,
+            the app has each person connect their own free Finnhub account during setup; signup takes about a minute,
+            and the app links straight to it. The key is checked with a real quote before it’s saved, then kept in
+            the iPhone’s Keychain. Requests go directly from the phone to Finnhub, so there’s no account to create
+            with me and no server in the middle. Pull down or tap refresh and every stock on the list updates at
+            once, along with each company’s name.
+          </p>
+        </div>
+        <hr />
+        <div>
           <h2><strong>Cutting the AI assistant</strong></h2>
           <p>
             The first versions had an AI assistant built in: ask about a stock and it would search the web and
@@ -199,7 +211,7 @@
           <p>
             This project was the point as much as the product. I’d carried the idea for years; AI gave me the tools
             to finally build it myself. I designed every screen, then built the app in SwiftUI with Claude Code,
-            learning as I went, from data storage and live quotes to onboarding and the App Store review process.
+            learning as I went, from storing the watchlist and fetching live quotes to onboarding and the App Store review process.
             Getting it onto the App Store was the challenge I set myself, and it’s there now.
           </p>
           <p><a class="sys-btn" href="https://apps.apple.com/us/app/buysellhold-stock-monitor/id6798918158" target="_blank" rel="noreferrer">See it on the App Store <span class="plus">+</span></a></p>
