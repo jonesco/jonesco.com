@@ -333,7 +333,9 @@ body.pin-footer .page { width: 100%; box-sizing: border-box; }   /* keep the ful
 
 /* ---------- BuySellHold case study: phone screens and video ---------- */
 .bsh-hero { margin: 8px 0 0; }
-.bsh-hero video { display: block; width: min(100%, 360px); height: auto; margin: 0 auto; border: var(--rule); }
+/* phone frame around app videos, like the phone in the Custom Card Creator images (a real, rounded object) */
+.phone { width: min(100%, 340px); margin: 0 auto; padding: 12px; background: #111; border-radius: 52px; box-shadow: 0 0 0 2px #2a2a2a inset; }
+.phone video, .phone img { display: block; width: 100%; height: auto; border-radius: 40px; }
 .bsh-hero .largehint { text-align: center; }
 .bsh-phones { margin: 24px 0 8px; align-items: start; }
 .bsh-phones img { display: block; width: 100%; height: auto; border: var(--rule); }
@@ -345,5 +347,3 @@ body.pin-footer .page { width: 100%; box-sizing: border-box; }   /* keep the ful
 .sys-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
 .sys-btn .plus { font-size: 28px; font-weight: 400; line-height: 1; }
 @media (max-width: 640px) { .bsh-phones img { width: min(100%, 260px); margin: 0 auto; } .bsh-phones .largehint { text-align: center; } }
-/* the app's wordmark in the title, in black: Buy↓ Sell↑ Hold; Trade Gothic has no arrows, so they're drawn */
-.bsh-title .bsh-arrow { display: inline-block; height: .74em; width: .44em; margin: 0 .03em 0 .02em; fill: currentColor; vertical-align: -0.02em; }
