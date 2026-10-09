@@ -40,7 +40,7 @@
     />
     <link rel="stylesheet" href="/fonts/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jonesco/system@1.0.0/system.css" />
-    <link rel="stylesheet" href="/css/jonesco.css?v=43" />
+    <link rel="stylesheet" href="/css/jonesco.css?v=44" />
 
     <!-- Structured data for AI and search engines -->
     <script type="application/ld+json">
@@ -108,22 +108,22 @@
           <h5 id="rcorners1">Case Study #8828</h5>
           <h1 class="bsh-title" aria-label="BuySellHold"><strong aria-hidden="true"><span class="bsh-buy">Buy<svg class="bsh-arrow" viewBox="0 0 60 100" aria-hidden="true"><path d="M21 0H39V60L53 46L61 55L30 90L-1 55L7 46L21 60Z"/></svg></span><span class="bsh-sell">Sell<svg class="bsh-arrow" viewBox="0 0 60 100" aria-hidden="true"><path d="M21 100H39V40L53 54L61 45L30 10L-1 45L7 54L21 40Z"/></svg></span><span class="bsh-hold">Hold</span></strong></h1>
           <h4>
-            For years I wanted a simple way to keep track of a stock from the moment I started watching it. I’d
-            notice a stock, forget what it cost when it caught my eye, and have no record of the price I’d actually
-            act on. BuySellHold is the tool I kept wishing for: an iPhone watchlist where you set your own buy,
-            hold and sell prices. I designed it and built it myself, with AI as my engineering partner, and shipped
-            it to the App Store.
+            BuySellHold is an iPhone app I designed, built and shipped to the App Store on my own, with AI as my
+            engineering partner. The idea came from a need I’d had for years: keeping track of a stock from the
+            moment I started watching it. I’d notice a stock, forget what it cost when it caught my eye, and have no
+            record of the price I’d act on. This project was my way to finally build that tool, and to learn what
+            it takes for a designer to make real software.
           </h4>
         </div>
         <div class="cols-2">
           <div>
             <h5><strong>Challenges to solve:</strong></h5>
             <ul class="a">
+              <li class="special-item">Learn to build and ship a native iOS app as a designer, with AI as my engineering partner</li>
               <li class="special-item">Remember the price a stock was at when you started watching it</li>
               <li class="special-item">Set your own buy and sell prices and see at a glance when a stock crosses one</li>
               <li class="special-item">Keep it simple: no account, no ads, your own quote source</li>
-              <li class="special-item">Take an idea I’d had for years from my head to a live App Store app, on my own</li>
-            </ul>
+                          </ul>
           </div>
           <div>
             <h5><strong>My role:</strong></h5>
@@ -137,6 +137,21 @@
         <div class="bsh-hero">
           <video src="/images/work/bsh-preview.mp4" poster="/images/work/bsh-preview-poster.jpg" autoplay muted loop playsinline aria-label="BuySellHold app preview: adding a stock, setting a range, and the card turning green to buy and purple to sell"></video>
           <p class="largehint">▲ The App Store preview: add a stock, set a range, and watch the card react when the price crosses it.</p>
+        </div>
+        <hr />
+        <div>
+          <h2><strong>A designer building the real thing</strong></h2>
+          <p>
+            I’d carried this idea for years. What changed was the tools. I designed each screen, then built the app
+            in SwiftUI with Claude Code: describing what I wanted, reading what it wrote, running it on my phone and
+            pushing back when something didn’t feel right. Along the way I learned how an iOS app is put together,
+            from storing the watchlist on the device and fetching live quotes to keeping a key safe in the Keychain,
+            designing the first-run experience and getting through App Store review.
+          </p>
+          <p>
+            Working this way changed how I design. I could try an idea in the real app in minutes instead of
+            describing it in a mockup, so decisions came from using the thing, not from guessing.
+          </p>
         </div>
         <hr />
         <div>
@@ -192,27 +207,11 @@
         </div>
         <hr />
         <div>
-          <h2><strong>Green for buy, purple for sell</strong></h2>
+          <h2><strong>Shipping it</strong></h2>
           <p>
-            The name is the interface: Buy with a down arrow, Sell with an up arrow, Hold in between. My first icon
-            used the stock market’s red and green. I moved to green and purple so buy and sell never read as good and
-            bad, and the pair stays distinct for people with red-green color blindness. The same two colors carry
-            through the wordmark, the cards and the icon. An accessibility pass raised the smallest text from 11 to
-            13 points and darkened the gray and green text so they meet contrast on white.
-          </p>
-        </div>
-        <div class="cols-2 bsh-icons">
-          <div><img src="/images/work/bsh-icon-early.png" alt="Early app icon: red down arrow and green up arrow on dark navy" /><p class="largehint">▲ Early concept: the market’s red and green.</p></div>
-          <div><img src="/images/work/bsh-icon-final.png" alt="Final app icon: green down arrow and purple up arrow on a light background" /><p class="largehint">▲ Shipped: green for buy, purple for sell.</p></div>
-        </div>
-        <hr />
-        <div>
-          <h2><strong>Designing with AI, shipping alone</strong></h2>
-          <p>
-            This project was the point as much as the product. I’d carried the idea for years; AI gave me the tools
-            to finally build it myself. I designed every screen, then built the app in SwiftUI with Claude Code,
-            learning as I went, from storing the watchlist and fetching live quotes to onboarding and the App Store review process.
-            Getting it onto the App Store was the challenge I set myself, and it’s there now.
+            Getting BuySellHold onto the App Store was the challenge I set myself, and it’s there now: listing,
+            privacy and support pages, an accessibility pass on type and contrast, and the preview video above.
+            It’s a small app, but every part of it, from the first sketch to the release, is mine.
           </p>
           <p><a class="sys-btn" href="https://apps.apple.com/us/app/buysellhold-stock-monitor/id6798918158" target="_blank" rel="noreferrer">See it on the App Store <span class="plus">+</span></a></p>
         </div>
