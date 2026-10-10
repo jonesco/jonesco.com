@@ -351,5 +351,4 @@ body.pin-footer .page { width: 100%; box-sizing: border-box; }   /* keep the ful
 /* Apple's official badge, used as supplied: no recoloring, at least 40px tall */
 .app-store a { display: inline-block; }
 .app-store img { display: block; width: 150px; height: auto; }
-.app-learned { border-left: var(--rule-w, 4px) solid var(--ink); padding-left: 16px; }
 @media (min-width: 901px) { .app-block.flip > :first-child { order: 2; } }
