@@ -345,8 +345,8 @@ body.pin-footer .page { width: 100%; box-sizing: border-box; }   /* keep the ful
 
 /* ---------- Shipped case study: three app blocks ---------- */
 .app-block { scroll-margin-top: calc(var(--hdr-small) + 24px); }
-.app-block h2 { display: flex; align-items: center; gap: 16px; }
-.app-cap { float: none; width: 60px; height: 60px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,.2); }
+/* initial cap: the app icon floats into the first paragraph, as on the MagicStaff case study */
+.app-cap { width: 60px; height: 60px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,.2); margin: 6px 16px 4px 0; }
 .app-line { font-size: clamp(19px, 1.8vw, 22px); line-height: 1.45; }
 /* Apple's official badge, used as supplied: no recoloring, at least 40px tall */
 .app-store a { display: inline-block; }
