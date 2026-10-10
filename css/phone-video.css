@@ -32,3 +32,7 @@
   .pv-demo { position: static; margin-top: 8px; }
   .pv-device, .pv-caption { max-width: 300px; }
 }
+
+/* placeholder screens while recordings are pending */
+.shot-placeholder { display: grid; place-items: center; background: var(--newsprint, #edebe6); color: #555; font-family: var(--label); font-weight: 700; text-transform: uppercase; letter-spacing: .03em; font-size: 15px; }
+.shot-placeholder--mac { width: 100%; aspect-ratio: 16 / 10; border: var(--rule, 4px solid #000); }
