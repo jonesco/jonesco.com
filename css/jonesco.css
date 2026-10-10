@@ -344,17 +344,12 @@ body.pin-footer .page { width: 100%; box-sizing: border-box; }   /* keep the ful
 @media (max-width: 640px) { .bsh-phones img { width: min(100%, 260px); margin: 0 auto; } .bsh-phones .largehint { text-align: center; } }
 
 /* ---------- Shipped case study: three app blocks ---------- */
-.app-index { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 8px 0 24px; }
-.app-index a { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; padding: 14px 0; border-top: var(--rule); }
-.app-index img { width: 56px; height: 56px; border-radius: 12px; box-shadow: 0 0 5px rgba(0,0,0,.2); flex: none; }
-.app-index b { display: block; font-family: var(--label); font-size: 22px; line-height: 1.1; transition: color .15s; }
-.app-index span { font-size: 15px; color: var(--muted); }
-.app-index a:hover b { color: var(--accent); }
 .app-block { scroll-margin-top: calc(var(--hdr-small) + 24px); }
-.app-num { font-family: var(--label); font-weight: 700; text-transform: uppercase; letter-spacing: .03em; font-size: 13px; color: var(--muted); margin: 0 0 8px; }
 .app-block h2 { display: flex; align-items: center; gap: 16px; }
 .app-cap { float: none; width: 60px; height: 60px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,.2); }
 .app-line { font-size: clamp(19px, 1.8vw, 22px); line-height: 1.45; }
+/* Apple's official badge, used as supplied: no recoloring, at least 40px tall */
+.app-store a { display: inline-block; }
+.app-store img { display: block; width: 150px; height: auto; }
 .app-learned { border-left: var(--rule-w, 4px) solid var(--ink); padding-left: 16px; }
 @media (min-width: 901px) { .app-block.flip > :first-child { order: 2; } }
-@media (max-width: 900px) { .app-index { grid-template-columns: 1fr; gap: 0; } }
