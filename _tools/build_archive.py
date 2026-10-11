@@ -189,6 +189,7 @@ FOOTER = '''
 
 
 def project_page(p, nxt):
+    """nxt is (href, name) of the next item in the archive grid."""
     blocks = ''
     for s in p['sections']:
         note = f'\n          <p>{e(s["note"])}</p>' if s['note'] else ''
@@ -211,7 +212,7 @@ def project_page(p, nxt):
     </div>'''
     title = f'{META[p["slug"]][2]} | Jonesco archive'
     return head(title, p['desc'] or f'{p["title"]}, {p["cat"]}.', f'/archive/{p["slug"]}') + body + \
-        next_band(f'/archive/{nxt}', 'Next in the archive', META[nxt][2]) + FOOTER
+        next_band(nxt[0], 'Next in the archive', nxt[1]) + FOOTER
 
 
 # newer work parked here for now, ahead of the old projects: (href, thumb, number, name, description)
@@ -246,7 +247,7 @@ def index_page():
         <p class="archive-back"><a href="/archive/about">About, clients and awards from the original site</a></p>
       </div>
     </div>'''
-    return head('Archive | Jonesco', 'Earlier work from the original jonesco.com.', '/archive/') + body + FOOTER
+    return head('Archive | Jonesco', 'Additional work.', '/archive/') + body + FOOTER
 
 
 def about_page():
@@ -299,9 +300,12 @@ def main():
     src = json.load(open(os.path.join(ROOT, '_tools', 'archive-source.json'), encoding='utf-8'))
     os.makedirs(os.path.join(ROOT, 'archive'), exist_ok=True)
     w = lambda path, s: open(os.path.join(ROOT, path), 'w', encoding='utf-8').write(s)
+    # the grid's reading order, wrapping around: the EXTRA pages first, then the old projects
+    chain = [(x[0], x[3]) for x in EXTRA] + [(f'/archive/{s}', META[s][2]) for s in ORDER]
     for i, slug in enumerate(ORDER):
+        nxt = chain[(len(EXTRA) + i + 1) % len(chain)]
         p = project(slug, src[slug])
-        w(f'archive/{slug}.html', project_page(p, ORDER[(i + 1) % len(ORDER)]))
+        w(f'archive/{slug}.html', project_page(p, nxt))
         w(f'{slug}.html', stub(f'/archive/{slug}'))
         print(f'archive/{slug:12} hero {len(p["hero"])}  ' + ', '.join(f'{s["label"]} ({len(s["media"])})' for s in p['sections']))
     w('archive/index.html', index_page())
