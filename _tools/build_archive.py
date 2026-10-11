@@ -214,17 +214,26 @@ def project_page(p, nxt):
         next_band(f'/archive/{nxt}', 'Next in the archive', META[nxt][2]) + FOOTER
 
 
-def index_page():
-    tiles = '\n'.join(f'''          <a href="/archive/{s}">
+# newer work parked here for now, ahead of the old projects: (href, thumb, number, name, description)
+EXTRA = [('/designed-built-shipped', '/images/work/dbs-thumb.jpg', 8828, 'Designed, Built, Shipped',
+          'Three apps I designed, built and shipped to the App Store myself, with AI as my engineering partner.')]
+
+
+def tile(href, src, num, name, desc):
+    return f'''          <a href="{href}">
             <div class="tile-card">
-              <div class="tile-image"><img src="/images/archive/thumb/{THUMB[s]}" alt="" /></div>
+              <div class="tile-image"><img src="{src}" alt="" /></div>
               <div class="tile-label">
-                <div class="csid"><p>#{NUM[s]}</p></div>
-                <h2><strong>{e(META[s][2])}</strong></h2>
-                <p class="tile-description">{e(DESC[s])}</p>
+                <div class="csid"><p>#{num}</p></div>
+                <h2><strong>{e(name)}</strong></h2>
+                <p class="tile-description">{e(desc)}</p>
               </div>
             </div>
-          </a>''' for s in ORDER)
+          </a>'''
+
+
+def index_page():
+    tiles = '\n'.join([tile(*x) for x in EXTRA] + [tile(f'/archive/{s}', f'/images/archive/thumb/{THUMB[s]}', NUM[s], META[s][2], DESC[s]) for s in ORDER])
     body = f'''
     <div id="root">
       <div class="page archive-index">
