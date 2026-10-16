@@ -15,15 +15,15 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://jonesco.com'
 CSS_V = 50
 
-# grid order from the old home page (Wayblazer skipped: it is a case study on this site), PartsTree last
+# grid order from the old home page (Wayblazer skipped: it is a case study on this site; PartsTree dropped)
 ORDER = ['firefly', 'wellsmith', 'ironsight', 'prime', 'rta', 'youga', 'dort', 'travelocity',
-         'joule', 'vitaminwater', 'rembrandt', 'partstree']
+         'joule', 'vitaminwater', 'rembrandt']
 THUMB = {'firefly': 'firefly_thumb.jpg', 'wellsmith': 'wellsmith_thumb.jpg', 'ironsight': 'ironsight_thumb.jpg',
          'prime': 'prime_thumb.jpg', 'rta': 'rta-shirts_thumb.jpg', 'youga': 'youga_thumb.png', 'dort': 'glbc_thumb.jpg',
          'travelocity': 'travelocity_thumb.jpg', 'joule': 'joule_thumb.png', 'vitaminwater': 'vw_thumb.jpg',
-         'rembrandt': 'rembrandt_thumb.jpg', 'partstree': 'partstree_thumb.jpg'}
+         'rembrandt': 'rembrandt_thumb.jpg'}
 # archive numbers, shown like the case study numbers
-NUM = {'firefly': 4565, 'wellsmith': 7828, 'ironsight': 1647, 'prime': 4832, 'rta': 5973, 'youga': 9650, 'dort': 4864, 'travelocity': 3966, 'joule': 3773, 'vitaminwater': 6016, 'rembrandt': 9118, 'partstree': 6663}
+NUM = {'firefly': 4565, 'wellsmith': 7828, 'ironsight': 1647, 'prime': 4832, 'rta': 5973, 'youga': 9650, 'dort': 4864, 'travelocity': 3966, 'joule': 3773, 'vitaminwater': 6016, 'rembrandt': 9118}
 # one sentence under each archive tile, drawn from the old project copy
 DESC = {
     'firefly': 'An interactive trade show display that launched Input/Output’s Firefly before the system was ready to demo.',
@@ -37,7 +37,6 @@ DESC = {
     'joule': 'Logo design for Joule Energy.',
     'vitaminwater': 'A brand campaign to make vitaminwater the drink of the next creative generation.',
     'rembrandt': 'A campaign for the Cleveland Museum of Art’s rare Rembrandt exhibition, from a bus wrap to a Facebook app.',
-    'partstree': 'A specialized e-commerce platform that finds the right part by model number, brand or serial number.',
 }
 # page title as on the old page, its category line, and the name used on the archive grid
 META = {
@@ -52,11 +51,10 @@ META = {
     'joule': ('Joule Energy', 'logo', 'Joule Energy'),
     'vitaminwater': ('Unlock your inner awesome.', 'brand campaign', 'vitaminwater'),
     'rembrandt': ('What makes a Rembrandt a Rembrandt?', 'campaign', 'Cleveland Museum of Art'),
-    'partstree': ('PartsTree', 'specialized e-commerce', 'PartsTree'),
 }
 TITLE_PARTS = {'Firefly', 'Wellsmith', 'Ironsight Brewers', 'Prime Institutional Group', 'RTA +', 'Cleveland Sports', 'Youga',
                'Have a drink', 'with a good friend.', 'Travelocity + CLE', 'Joule Energy', 'Unlock your', 'inner awesome.',
-               'What makes a', 'Rembrandt a Rembrandt?', 'PartsTree'}
+               'What makes a', 'Rembrandt a Rembrandt?'}
 
 ABOUT = {
     'bio': ['I’ve always been a creative problem solver. And for more than two decades, it’s also been my career. I know how to create smart, engaging solutions that connect with the audience while supporting creative strategy.',

@@ -520,35 +520,5 @@
    "img",
    "images/work/rembrandt-yourself4.png"
   ]
- ],
- "partstree": [
-  [
-   "img",
-   "images/work/partstree_home.png"
-  ],
-  [
-   "t",
-   "PartsTree"
-  ],
-  [
-   "t",
-   "specialized e-commerce"
-  ],
-  [
-   "t",
-   "PartsTree came to us with a complex UX challenge and we accepted every bit. With a slew of different search possibilities – from model numbers to lawn equipment brands to serial numbers – we created an intuitive and robust platform so that customers can find the parts they need, simply and quickly."
-  ],
-  [
-   "img",
-   "images/work/partstree_cascading.png"
-  ],
-  [
-   "img",
-   "images/work/partstree_multiple.png"
-  ],
-  [
-   "img",
-   "images/work/partstree-diagram.png"
-  ]
  ]
 }
