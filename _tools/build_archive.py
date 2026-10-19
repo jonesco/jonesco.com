@@ -214,7 +214,7 @@ def project_page(p, nxt):
 
 
 # newer work parked here for now, ahead of the old projects: (href, thumb, number, name, description)
-EXTRA = [('/designed-built-shipped', '/images/work/dbs-thumb.jpg', 8828, 'Designed, Built, Shipped',
+EXTRA = [('/designed-built-shipped', '/images/work/dbs-thumb.jpg?v=2', 8828, 'Designed, Built, Shipped',
           'Three apps I designed, built and shipped to the App Store myself, with AI as my engineering partner.')]
 
 
