@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="compact-header">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="robots" content="noindex" />   <!-- draft: not linked anywhere yet; remove when it joins the home page -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Designing IBM Network Intelligence, an AI product where an agent investigates network problems on its own and people oversee it."
+    />
+    <meta name="author" content="Wes Jones" />
+    <meta
+      name="keywords"
+      content="Principal Product Designer, UX Designer, UI Designer, Design Systems, Agentic AI, Figma, Prototyping, User Research, Austin TX, Fintech Design, Healthcare UX"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="IBM Network Intelligence | Jonesco" />
+    <meta
+      property="og:description"
+      content="Designing the interface for an AI agent that investigates network problems on its own."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jonesco.com/network-intelligence" />
+    <link rel="canonical" href="https://jonesco.com/network-intelligence" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/jonesco-bug180.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/jonesco-bug152.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/fonts/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jonesco/system@1.0.0/system.css" />
+    <link rel="stylesheet" href="/css/jonesco.css?v=50" />
+
+    <!-- Structured data for AI and search engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Wes Jones",
+        "jobTitle": "Principal Product Designer",
+        "description": "Principal Product Designer with more than 20 years of experience leading and mentoring digital product teams across fintech, healthcare, travel, and enterprise software. Specializes in designing agentic systems and purpose-built AI interaction patterns.",
+        "url": "https://jonesco.com",
+        "email": "wes@jonesco.com",
+        "telephone": "512-944-8513",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Austin",
+          "addressRegion": "TX",
+          "addressCountry": "US"
+        },
+        "knowsAbout": [
+          "UX Design",
+          "UI Design",
+          "Product Design",
+          "Design Systems",
+          "Agentic AI",
+          "AI Interaction Design",
+          "Figma",
+          "Prototyping",
+          "User Research",
+          "Design Sprints",
+          "Fintech",
+          "Healthcare UX",
+          "Enterprise Software"
+        ],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Principal Product Designer",
+          "occupationLocation": {
+            "@type": "City",
+            "name": "Austin, TX"
+          },
+          "experienceRequirements": "20+ years"
+        },
+        "sameAs": ["https://www.linkedin.com/in/wes-jones-a0914312/"]
+      }
+    </script>
+
+    <title>IBM Network Intelligence | Jonesco</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="bar">
+        <a class="brand" href="/" aria-label="Jonesco, home">
+          <picture><source media="(max-width: 329px)" srcset="/images/jonesco-logo-j.svg" /><source media="(max-width: 399px)" srcset="/images/jonesco-logo-jns.svg" /><img src="/images/jonesco-logo.svg" alt="Jonesco" /></picture>
+        </a>
+        <nav>
+          <a href="/#work">Work</a>
+          <a href="/#contact">Contact</a>
+          <a href="/images/Wes_Jones_Resume.pdf" class="opt">Resumé</a>
+        </nav>
+      </div>
+    </header>
+    <div id="root">
+      <div class="page">
+        <div>
+          <h5 id="rcorners1">Case Study #5260</h5>
+          <h1><strong>IBM Network Intelligence</strong></h1>
+          <h4>
+            IBM Network Intelligence is an AI product for network operations. An agent works network problems on its
+            own: it correlates alarms and metrics, forms and revises conclusions, and proposes fixes, sometimes
+            running them. A person oversees it. My job was to design how that oversight works, for an agent that
+            keeps working whether or not anyone is watching.
+          </h4>
+        </div>
+        <div class="cols-2">
+          <div>
+            <h5><strong>Challenges to solve:</strong></h5>
+            <ul class="a">
+              <li class="special-item">Design for an agent that runs continuously, not a chatbot bolted onto a dashboard</li>
+              <li class="special-item">Show what needs a person right now, and what changed while they were away</li>
+              <li class="special-item">Earn trust in the agent’s conclusions before asking anyone to let it act</li>
+              <li class="special-item">Bring in the tools network teams already use without rebuilding them</li>
+            </ul>
+          </div>
+          <div>
+            <h5><strong>My role:</strong></h5>
+            <ul class="a">
+              <li class="special-item">Principal product designer, from concept through detailed interaction design</li>
+              <li class="special-item">Built working, high-fidelity prototypes in code with Carbon, IBM’s design system</li>
+              <li class="special-item">Turned customer discovery research into design directions with product management</li>
+              <li class="special-item">Documented behavior and rationale so engineering could build from it</li>
+            </ul>
+          </div>
+        </div>
+        <div style="margin-bottom: 40px">
+          <img src="/images/work/ini-activity.jpg" alt="IBM Network Intelligence Activity home: a queue of what is waiting on you, autonomous activity over the last 30 days, investigations by stage, symptoms and observations" />
+        </div>
+        <hr />
+        <div>
+          <h2><strong>Three questions</strong></h2>
+          <p>
+            Network operations teams don’t lack data. They have alarms, metrics and dashboards spread across
+            several tools, and the correlation lives in someone’s head. Network Intelligence takes on that work:
+            the agent opens an investigation, gathers evidence, names a likely cause and builds a remediation.
+            The investigation is the unit of work, and it moves through stages from Pending to Resolved, sometimes
+            without a person touching it.
+          </p>
+          <p>
+            So the interface isn’t where the work happens. It’s where a person catches up with work that’s already
+            underway. I designed everything around three questions for the person who just sat down: What needs me
+            right now? What changed while I was away? Can I trust what it concluded?
+          </p>
+        </div>
+        <hr />
+        <div>
+          <h2><strong>Every surface says something new</strong></h2>
+          <p>
+            An early home page listed what needed attention, and the first question in review was: isn’t that just
+            repeating the sidebar? It was. That became the rule for the whole layout: every surface has to say
+            something the others can’t. The left rail owns current state, grouped by what each investigation needs
+            from you: a tool approval, a change request, an answer to a question. The center owns transitions: a
+            conclusion that changed, a grade that dropped, an investigation that closed itself. On a quiet night the
+            feed is almost empty, and that’s information, not a failure to fill the space.
+          </p>
+          <p>
+            People could make home their own, but only by pinning things already on screen, never by starting from
+            a blank page. We’d tried a home page built around a prompt box, and it didn’t work. People don’t arrive
+            with a prompt in mind. They arrive wanting to know what happened.
+          </p>
+        </div>
+        <div style="margin-bottom: 40px">
+          <img src="/images/work/ini-investigation.jpg" alt="An investigation in IBM Network Intelligence: the agent’s conclusion, a read-only check waiting for approval, key figures, details and a topology of the affected devices" />
+        </div>
+        <hr />
+        <div>
+          <h2><strong>Showing its work</strong></h2>
+          <p>
+            Every investigation has a Summary, its Observations and its Reasoning: every step the agent took and the
+            evidence behind it. When the agent wants to act, the step says what kind of action it is (read-only,
+            reversible, or rolled back automatically after ten minutes) before anyone approves and runs it. Teams
+            choose which tools the agent always asks about and which it can run on its own, so autonomy grows as
+            trust does.
+          </p>
+          <p>
+            Other systems can send their own conclusions, too, and I drew a hard line between evidence and
+            testimony. A measurement is evidence. Another agent’s answer is testimony. An investigation that quietly
+            promotes someone else’s conclusion into its own evidence will eventually cite something it can’t
+            defend, so the interface labels those findings as theirs, not ours, and styles them differently so the
+            difference survives a skim.
+          </p>
+        </div>
+        <hr />
+        <div>
+          <h2><strong>Closing the loop</strong></h2>
+          <p>
+            A fix isn’t done when it’s applied. Findings tracks every change the agent recommended, from needs
+            approval through a 14-day monitoring window, until it’s proven or regresses. It’s also where the agent
+            asks people to confirm what it learned, and where the results add up: changes applied, alerts avoided,
+            hours saved.
+          </p>
+        </div>
+        <div style="margin-bottom: 40px">
+          <img src="/images/work/ini-findings.jpg" alt="Findings in IBM Network Intelligence: recommended threshold and rule changes with their stage, result, monitoring window and estimated impact" />
+        </div>
+        <hr />
+        <div>
+          <h2><strong>A grade you can take apart</strong></h2>
+          <p>
+            Network health zooms from the whole estate to a region, a site and a device. Each region is graded on
+            three planes: control plane, data plane and connectivity. A region graded D shows which plane dropped and
+            why, and every grade links to the investigations behind it. A single letter grade that can’t be taken
+            apart is just decoration.
+          </p>
+        </div>
+        <div style="margin-bottom: 40px">
+          <img src="/images/work/ini-health.jpg" alt="Network health in IBM Network Intelligence: regions sized by device count and tinted by their worst plane, with each region graded on control plane, data plane and connectivity" />
+        </div>
+        <hr />
+        <div>
+          <h2><strong>From research to direction</strong></h2>
+          <p>
+            A customer discovery workshop surfaced nine problems network teams kept running into: alarm floods, slow
+            root cause, too many tools, growing without adding headcount, blame between domains, trust in AI,
+            stale runbooks, slow onboarding and integration. I sketched responses to each one directly on the
+            working prototype, and reviewed them with product management to decide what to pursue now and what to
+            hold for later. Among them: a handoff summary written for whoever reads it, from an engineer to an
+            executive; autonomy set per workflow and device group instead of per tool; and findings that catch a
+            runbook drifting out of date.
+          </p>
+        </div>
+        <hr />
+        <div>
+          <h2><strong>How I worked</strong></h2>
+          <p>
+            I designed in code. Instead of static screens, I built working prototypes on Carbon with realistic data,
+            so the team could click through an investigation, approve a step and watch the queue change. Over six
+            months that came to more than 200 iterations across a dozen prototypes, from onboarding and agent
+            behavior to planning and a digital twin for testing changes before they reach the network.
+          </p>
+          <p>
+            Each prototype came with an illustrated document covering how it behaves, why, and what changed, so
+            engineering had the reasoning along with the screens. I kept a record of ideas we tried and reversed,
+            too: a chat rail that fought the layout for space, prompt tiles on home, a conversation rendered under
+            the home page. They were tempting ideas that didn’t survive contact, and knowing why is as useful as
+            the design that replaced them.
+          </p>
+        </div>
+      </div>
+    </div>
+    <a class="next-band" href="/designed-built-shipped">
+      <div class="bar">
+        <span class="next-label">Next case study &gt;</span>
+        <span class="next-title">Designed, Built, Shipped</span>
+      </div>
+    </a>
+    <footer class="site-footer">
+      <div class="bar">
+        <div class="links">
+          <a href="mailto:wes@jonesco.com">wes@jonesco.com</a>
+          <a href="https://www.linkedin.com/in/wes-jones-a0914312/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="/images/Wes_Jones_Resume.pdf">Resumé</a>
+        </div>
+        <small>© <span class="yr">2026</span> Wes Jones</small>
+      </div>
+    </footer>
+    <script>document.querySelectorAll('.yr').forEach(e => e.textContent = new Date().getFullYear());</script>
+  </body>
+</html>
