@@ -104,9 +104,16 @@ def project(slug, toks):
     return {'slug': slug, 'title': title, 'cat': cat, 'desc': desc, 'hero': hero, 'sections': sections}
 
 
+# white logos on transparent PNGs; the old pages set the brand color behind them
+IMG_BG = {'images/archive/work/prime-logo.png': '#00457c'}
+
+
 def media(items):
     """Images in the case study style: one full width, several in a grid."""
     def one(kind, src):
+        if kind == 'img' and src in IMG_BG:
+            return (f'<div style="background-color: {IMG_BG[src]}; text-align: center;"><img src="/{src}" alt="" '
+                    'class="shadowed-div" loading="lazy" style="max-width: 80%; margin: 0 auto;" /></div>')
         if kind == 'img':
             return f'<div><img src="/{src}" alt="" class="shadowed-div" loading="lazy" /></div>'
         return (f'<div class="archive-video"><iframe src="{e(src)}" title="Video" '
