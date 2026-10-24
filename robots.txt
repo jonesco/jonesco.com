@@ -2,6 +2,7 @@
 User-agent: *
 Disallow: /archive
 Disallow: /images/archive
+Disallow: /v2
 
 Sitemap: https://jonesco.com/sitemap.xml
 

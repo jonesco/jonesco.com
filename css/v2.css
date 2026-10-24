@@ -1,0 +1,82 @@
+/* v2 homepage preview at /v2/ (source: branch v2). Loaded after jonesco.css. */
+
+/* ===========================
+   HOME V2 (hero, work cards, how I work, about, takes)
+   =========================== */
+
+.eyebrow {
+  font-family: var(--label); font-weight: 700; font-size: 14px; letter-spacing: .03em; text-transform: uppercase;
+  margin: 0 0 20px; padding-bottom: 12px; border-bottom: var(--rule);
+}
+.hero { padding-top: 64px; padding-bottom: 96px; }
+.hero .eyebrow { border-bottom: 0; padding-bottom: 0; color: var(--muted); }
+/* The lede is a sentence, so it uses the body face at display size rather than condensed caps */
+.hero-lede {
+  font-family: inherit; font-weight: 400; text-transform: none; letter-spacing: -.015em;
+  font-size: clamp(32px, 4.6vw, 60px); line-height: 1.08; max-width: 18em; margin: 0 0 28px; text-wrap: balance;
+}
+.hero-lede strong { font-weight: 700; }
+.hero-intro { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; max-width: 36em; margin: 0 0 28px; }
+.hero-links { display: flex; flex-wrap: wrap; gap: 12px 32px; margin: 0; }
+.hero-links a, .work-view {
+  font-family: var(--label); font-weight: 700; font-size: 15px; letter-spacing: .03em; text-transform: uppercase;
+  text-decoration: none; color: var(--ink);
+}
+.hero-links a { border-bottom: 3px solid var(--highlight); padding-bottom: 2px; }
+.hero-links a:hover { color: var(--accent); }
+
+.v2-section { padding-bottom: 104px; }
+.v2-lede {
+  font-family: inherit; font-weight: 400; text-transform: none; letter-spacing: -.01em;
+  font-size: clamp(26px, 3vw, 40px); line-height: 1.2; max-width: 22em; margin: 0 0 20px; text-wrap: balance;
+}
+.v2-intro { font-size: 18px; line-height: 1.55; color: #333; max-width: 40em; margin: 0 0 48px; }
+
+/* Selected work: text cards, each under a rule, numbered with the case study id */
+.work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 40px; margin-top: 32px; }
+.work-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+.work-card .tile-image { display: block; margin-bottom: 14px; }   /* same 4:3 bordered thumbnail as the current home tiles */
+.work-card:hover .tile-image img { transform: scale(1.04); }
+.work-num { font-family: var(--label); font-size: 13px; letter-spacing: .03em; color: #888; margin-bottom: 6px; }
+.work-card h3 { font-family: var(--label); text-transform: none; letter-spacing: 0; font-size: 26px; line-height: 1.15; margin: 0 0 10px; transition: color .15s; }
+.work-card p { font-size: 16px; line-height: 1.5; color: #333; margin: 0 0 20px; flex: 1; }
+.work-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.work-tag {
+  background: var(--ink); color: var(--highlight);
+  font-family: var(--label); font-weight: 700; font-size: 12px; letter-spacing: .03em; text-transform: uppercase; padding: 5px 10px;
+}
+.work-card:hover h3, .work-card:hover .work-view { color: var(--accent); }
+
+/* How I work: four numbered steps (a real sequence) */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+.step { border-top: 4px solid var(--ink); padding-top: 16px; }
+.step-num { display: block; font-family: var(--display); font-weight: 700; font-size: 56px; line-height: .9; margin-bottom: 14px; }
+.step h3 { font-family: var(--label); text-transform: none; letter-spacing: 0; font-size: 24px; line-height: 1.15; margin: 0 0 10px; }
+.step p { font-size: 16px; line-height: 1.5; color: #333; margin: 0; }
+
+/* About: story on the left, facts on the right, then a pull quote from a take */
+.about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 56px; margin-top: 12px; }
+.about-text p { font-size: 18px; line-height: 1.6; max-width: 36em; }
+.facts ul { list-style: none; margin: 0; padding: 0; }
+.facts li { font-size: 16px; line-height: 1.5; padding: 14px 0; border-bottom: var(--thin); }
+.pull {
+  margin: 64px 0 0; padding: 0;
+  font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: -.01em;
+  font-size: clamp(40px, 6vw, 80px); line-height: .95;
+}
+.pull::before { content: "“"; }
+.pull::after { content: "”"; }
+
+#takes .takes-list { margin: 0; max-width: none; }
+.contact-intro { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; max-width: 32em; margin: -12px 0 32px; }
+
+@media (max-width: 900px) {
+  .work-grid { grid-template-columns: 1fr 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 640px) {
+  .hero { padding-top: 36px; padding-bottom: 64px; }
+  .v2-section { padding-bottom: 72px; }
+  .work-grid, .steps { grid-template-columns: 1fr; gap: 36px; }
+}
