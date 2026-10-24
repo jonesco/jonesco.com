@@ -326,6 +326,17 @@ li.special-item::marker { color: var(--ink); }
 }
 
 
+/* Endorsements: excerpts from LinkedIn recommendations, quoted exactly */
+.endorsements { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 40px; margin-top: 32px; }
+.endorsement { margin: 0; border-top: var(--thin); padding-top: 20px; display: flex; flex-direction: column; gap: 20px; }
+.endorsement blockquote { margin: 0; font-size: 19px; line-height: 1.45; flex: 1; }
+.endorsement figcaption { display: flex; flex-direction: column; gap: 4px; }
+.endorsement figcaption strong { font-family: var(--label); font-weight: 700; font-size: 18px; }
+.endorsement figcaption span { font-size: 14px; line-height: 1.4; color: var(--muted); }
+@media (max-width: 900px) { .endorsements { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .endorsements { grid-template-columns: 1fr; gap: 36px; } }
+
+
 /* ===========================
    RESPONSIVE
    =========================== */
