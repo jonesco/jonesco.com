@@ -32,16 +32,10 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/jonesco-bug152.png" />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="/fonts/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jonesco/system@1.0.0/system.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jonesco/system@2.0.0/system.css" />
     <link rel="stylesheet" href="/css/jonesco.css?v=57" />
-    <link rel="stylesheet" href="/css/v2.css?v=1" />
+    <link rel="stylesheet" href="/css/v2.css?v=9" />
 
     <!-- Structured data for AI and search engines -->
     <script type="application/ld+json">
@@ -99,6 +93,7 @@
           <a href="#work">Work</a>
           <a href="#process" class="opt">How I work</a>
           <a href="#about" class="opt">About</a>
+          <a href="#endorsements" class="opt">Endorsements</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -106,11 +101,11 @@
     <div id="root">
       <section class="hero page">
         <p class="eyebrow">Principal Product Designer · Agentic systems</p>
-        <h1 class="hero-lede">I design <strong>agentic systems</strong> and the <strong>interaction patterns</strong> that make AI easier to work with.</h1>
+        <h1 class="hero-lede">I design <strong>agentic products</strong> and the <strong>systems &amp; tools</strong> that scale them.</h1>
         <p class="hero-intro">
           I’m Wes Jones. For more than 20 years I’ve designed products for investment banks, fintech, travel and
-          enterprise software. These days I spend most of my time on how people work alongside AI agents, and I
-          build what I design. But I’m always up for solving a good problem, big or small.
+          enterprise software. Lately I’m focused on agentic systems and the interaction patterns that make AI
+          easier to work with. But I’m always up for solving a good problem, big or small.
         </p>
         <p class="hero-links">
           <a href="#work">See selected work →</a>
@@ -230,27 +225,42 @@
             </ul>
           </div>
         </div>
-        <blockquote class="pull">Show the outcome, not the machinery.</blockquote>
       </section>
 
-      <section class="page v2-section" id="takes">
-        <p class="eyebrow">Takes</p>
-        <ul class="takes-list">
-          <li>
-            <a href="/takes/more-arms">
-              <span class="take-num">Take #596346</span>
-              <span class="take-title">It’s not headless, it’s more arms.</span>
-              <span class="take-date">October 4, 2026</span>
-            </a>
-          </li>
-          <li>
-            <a href="/takes/agent-count">
-              <span class="take-num">Take #253735</span>
-              <span class="take-title">Agent count is a flex, not a feature.</span>
-              <span class="take-date">October 4, 2026</span>
-            </a>
-          </li>
-        </ul>
+      <section class="page v2-section" id="endorsements">
+        <div class="eyebrow eyebrow-row">
+          <span>From people I’ve worked with</span>
+          <span class="carousel-nav">
+            <button type="button" class="carousel-prev" aria-label="Previous endorsements">←</button>
+            <button type="button" class="carousel-next" aria-label="Next endorsements">→</button>
+          </span>
+        </div>
+        <div class="endorsements" role="region" aria-label="Endorsements" tabindex="0">
+          <figure class="endorsement">
+            <blockquote>“He is simultaneously an artist and an information architect, with a healthy dash of product management.”</blockquote>
+            <figcaption><strong>Jason Gindele</strong><span>Senior Product Leader, BHI</span></figcaption>
+          </figure>
+          <figure class="endorsement">
+            <blockquote>“I’ve worked with dozens of UX and creative types over my 20+ years in Product Management and I can say with confidence that Wes is by far the best.”</blockquote>
+            <figcaption><strong>Dave Hill</strong><span>Vice President, Commercial Product Solutions, Netspend</span></figcaption>
+          </figure>
+          <figure class="endorsement">
+            <blockquote>“Wes also thrives in ambiguous scenarios. When many would get stuck waiting for clarity, he creates it.”</blockquote>
+            <figcaption><strong>M. Natalia Russi-Vigoya, Ph.D.</strong><span>User Experience Research Lead &amp; Sr. User Researcher, IBM</span></figcaption>
+          </figure>
+          <figure class="endorsement">
+            <blockquote>“Often Wes would continue to think about the design and come up with even better, more streamlined flows!”</blockquote>
+            <figcaption><strong>Jill McPherson</strong><span>Principal Systems Analyst, Fidelity Investments</span></figcaption>
+          </figure>
+          <figure class="endorsement">
+            <blockquote>“Wes is also a bit of a wizard with the design tools he uses. He repeatedly created design prototypes that were not only highly functional, but visually dazzling, often serving as a source of inspiration for the team.”</blockquote>
+            <figcaption><strong>Sara Suter</strong><span>Director of User Experience, Expero</span></figcaption>
+          </figure>
+          <figure class="endorsement">
+            <blockquote>“He demonstrated remarkable efficiency in producing high-quality mockups and translating complex ideas into clear, user-focused designs with impressive speed.”</blockquote>
+            <figcaption><strong>Phil Gambling</strong><span>Practice Lead - Architecture &amp; Development, Expero</span></figcaption>
+          </figure>
+        </div>
       </section>
 
         <div class="dark-band" id="contact">
@@ -291,6 +301,30 @@
         }
         update();
         window.addEventListener('scroll', update, { passive: true });
+      })();
+    </script>
+    <script>
+      // Endorsements carousel: arrows step one card; swipe and keyboard scroll natively (scroll-snap)
+      (function () {
+        var track = document.querySelector('.endorsements');
+        if (!track) return;
+        var prev = document.querySelector('.carousel-prev'), next = document.querySelector('.carousel-next');
+        var smooth = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+        function step() {
+          var card = track.querySelector('.endorsement');
+          return card.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0);
+        }
+        function update() {
+          prev.disabled = track.scrollLeft <= 2;
+          next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+        }
+        function go(dir) { track.scrollBy({ left: dir * step(), behavior: smooth }); setTimeout(update, 450); }
+        prev.addEventListener('click', function () { go(-1); });
+        next.addEventListener('click', function () { go(1); });
+        track.addEventListener('scroll', update, { passive: true });
+        track.addEventListener('scrollend', update);
+        window.addEventListener('resize', update);
+        update();
       })();
     </script>
     <script>document.querySelectorAll('.yr').forEach(e => e.textContent = new Date().getFullYear());</script>
