@@ -120,8 +120,6 @@ def page(title, desc, url, body, og_image=None, extra_head=''):
     <footer class="site-footer">
       <div class="bar">
         <div class="links">
-          <a href="mailto:wes@jonesco.com">wes@jonesco.com</a>
-          <a href="https://www.linkedin.com/in/wes-jones-a0914312/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="/feed.xml">RSS</a>
         </div>
         <small>© <span class="yr">2026</span> Wes Jones</small>

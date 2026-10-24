@@ -6,7 +6,6 @@ Website: https://jonesco.com
 LinkedIn: https://www.linkedin.com/in/wes-jones-a0914312/
 Email: wes@jonesco.com
 Phone: 512-944-8513
-Resume: https://jonesco.com/images/Wes_Jones_Resume.pdf
 
 ## About
 
@@ -64,4 +63,3 @@ URL: https://jonesco.com/cpay
 - Email: wes@jonesco.com
 - Phone: 512-944-8513
 - LinkedIn: https://www.linkedin.com/in/wes-jones-a0914312/
-- Resume: https://jonesco.com/images/Wes_Jones_Resume.pdf

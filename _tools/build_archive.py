@@ -178,10 +178,6 @@ def next_band(href, label, title):
 FOOTER = '''
     <footer class="site-footer">
       <div class="bar">
-        <div class="links">
-          <a href="mailto:wes@jonesco.com">wes@jonesco.com</a>
-          <a href="https://www.linkedin.com/in/wes-jones-a0914312/" target="_blank" rel="noreferrer">LinkedIn</a>
-        </div>
         <small>© <span class="yr">2026</span> Wes Jones</small>
       </div>
     </footer>
