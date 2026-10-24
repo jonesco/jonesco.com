@@ -326,15 +326,29 @@ li.special-item::marker { color: var(--ink); }
 }
 
 
-/* Endorsements: excerpts from LinkedIn recommendations, quoted exactly */
-.endorsements { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 40px; margin-top: 32px; }
-.endorsement { margin: 0; border-top: var(--thin); padding-top: 20px; display: flex; flex-direction: column; gap: 20px; }
+/* Endorsements: excerpts from LinkedIn recommendations, quoted exactly.
+   A scroll-snap carousel: three cards on desktop, two on tablets, one on phones; arrows in the eyebrow row */
+.eyebrow-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+.carousel-nav { display: flex; gap: 8px; }
+.carousel-nav button {
+  width: 44px; height: 44px; padding: 0; border: var(--rule); background: var(--paper); color: var(--ink);
+  font-size: 20px; line-height: 1; cursor: pointer;
+}
+.carousel-nav button:hover:not(:disabled) { background: var(--ink); color: var(--paper); }
+.carousel-nav button:focus-visible, .endorsements:focus-visible { outline: 3px solid var(--highlight); outline-offset: 2px; }
+.carousel-nav button:disabled { opacity: .25; cursor: default; }
+.endorsements {
+  display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 80px) / 3); gap: 40px; margin-top: 32px;
+  overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none;
+}
+.endorsements::-webkit-scrollbar { display: none; }
+.endorsement { margin: 0; scroll-snap-align: start; border-top: var(--thin); padding-top: 20px; display: flex; flex-direction: column; gap: 20px; }
 .endorsement blockquote { margin: 0; font-size: 19px; line-height: 1.45; flex: 1; }
 .endorsement figcaption { display: flex; flex-direction: column; gap: 4px; }
 .endorsement figcaption strong { font-family: var(--label); font-weight: 700; font-size: 18px; }
 .endorsement figcaption span { font-size: 14px; line-height: 1.4; color: var(--muted); }
-@media (max-width: 900px) { .endorsements { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 640px) { .endorsements { grid-template-columns: 1fr; gap: 36px; } }
+@media (max-width: 900px) { .endorsements { grid-auto-columns: calc((100% - 40px) / 2); } }
+@media (max-width: 640px) { .endorsements { grid-auto-columns: 100%; } }
 
 
 /* ===========================

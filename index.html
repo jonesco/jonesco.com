@@ -233,8 +233,14 @@
       </section>
 
       <section class="page v2-section" id="endorsements">
-        <p class="eyebrow">From people I’ve worked with</p>
-        <div class="endorsements">
+        <div class="eyebrow eyebrow-row">
+          <span>From people I’ve worked with</span>
+          <span class="carousel-nav">
+            <button type="button" class="carousel-prev" aria-label="Previous endorsements">←</button>
+            <button type="button" class="carousel-next" aria-label="Next endorsements">→</button>
+          </span>
+        </div>
+        <div class="endorsements" role="region" aria-label="Endorsements" tabindex="0">
           <figure class="endorsement">
             <blockquote>“Wes also thrives in ambiguous scenarios. When many would get stuck waiting for clarity, he creates it.”</blockquote>
             <figcaption><strong>M. Natalia Russi-Vigoya, Ph.D.</strong><span>UX research leader, worked with Wes at IBM</span></figcaption>
@@ -300,6 +306,30 @@
         }
         update();
         window.addEventListener('scroll', update, { passive: true });
+      })();
+    </script>
+    <script>
+      // Endorsements carousel: arrows step one card; swipe and keyboard scroll natively (scroll-snap)
+      (function () {
+        var track = document.querySelector('.endorsements');
+        if (!track) return;
+        var prev = document.querySelector('.carousel-prev'), next = document.querySelector('.carousel-next');
+        var smooth = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+        function step() {
+          var card = track.querySelector('.endorsement');
+          return card.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0);
+        }
+        function update() {
+          prev.disabled = track.scrollLeft <= 2;
+          next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+        }
+        function go(dir) { track.scrollBy({ left: dir * step(), behavior: smooth }); setTimeout(update, 450); }
+        prev.addEventListener('click', function () { go(-1); });
+        next.addEventListener('click', function () { go(1); });
+        track.addEventListener('scroll', update, { passive: true });
+        track.addEventListener('scrollend', update);
+        window.addEventListener('resize', update);
+        update();
       })();
     </script>
     <script>document.querySelectorAll('.yr').forEach(e => e.textContent = new Date().getFullYear());</script>
