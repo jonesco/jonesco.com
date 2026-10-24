@@ -13,7 +13,7 @@
 /* The lede is a sentence, so it uses the body face at display size rather than condensed caps */
 .hero-lede {
   font-family: inherit; font-weight: 400; text-transform: none; letter-spacing: -.015em;
-  font-size: clamp(32px, 4.6vw, 60px); line-height: 1.08; max-width: 18em; margin: 0 0 28px; text-wrap: balance;
+  font-size: clamp(36px, 5.4vw, 72px); line-height: 1.06; max-width: 18em; margin: 0 0 28px; text-wrap: balance;
 }
 .hero-lede strong { font-weight: 700; }
 .hero-intro { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; max-width: 36em; margin: 0 0 28px; }
