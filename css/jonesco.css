@@ -335,7 +335,8 @@ li.special-item::marker { color: var(--ink); }
   overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none;
 }
 .endorsements::-webkit-scrollbar { display: none; }
-.endorsement { margin: 0; scroll-snap-align: start; border-top: var(--thin); padding-top: 20px; display: flex; flex-direction: column; gap: 20px; }
+:root { --newsprint: #edeae2; }   /* warm gray newsprint behind the quotes */
+.endorsement { margin: 0; scroll-snap-align: start; background: var(--newsprint); padding: 28px; display: flex; flex-direction: column; gap: 24px; }
 .endorsement blockquote { margin: 0; font-size: 19px; line-height: 1.45; flex: 1; }
 .endorsement figcaption { display: flex; flex-direction: column; gap: 4px; }
 .endorsement figcaption strong { font-family: var(--label); font-weight: 700; font-size: 18px; }
