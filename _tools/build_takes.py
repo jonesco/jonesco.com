@@ -11,7 +11,7 @@ import datetime, html, os, random, re, subprocess, sys, tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://jonesco.com'
-CSS_V = 51
+CSS_V = 54
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
 
@@ -113,7 +113,6 @@ def page(title, desc, url, body, og_image=None, extra_head=''):
         <nav>
           <a href="/#work">Work</a>
           <a href="/#contact">Contact</a>
-          <a href="/images/Wes_Jones_Resume.pdf" class="opt">Resumé</a>
         </nav>
       </div>
     </header>

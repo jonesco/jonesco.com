@@ -13,7 +13,7 @@ import html, json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://jonesco.com'
-CSS_V = 51
+CSS_V = 54
 
 # grid order from the old home page (Wayblazer skipped: it is a case study on this site; PartsTree dropped)
 ORDER = ['firefly', 'wellsmith', 'ironsight', 'prime', 'rta', 'youga', 'dort', 'travelocity',
@@ -160,7 +160,6 @@ def head(title, desc, path):
         <nav>
           <a href="/#work">Work</a>
           <a href="/#contact">Contact</a>
-          <a href="/images/Wes_Jones_Resume.pdf" class="opt">Resumé</a>
         </nav>
       </div>
     </header>'''
@@ -182,7 +181,6 @@ FOOTER = '''
         <div class="links">
           <a href="mailto:wes@jonesco.com">wes@jonesco.com</a>
           <a href="https://www.linkedin.com/in/wes-jones-a0914312/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="/images/Wes_Jones_Resume.pdf">Resumé</a>
         </div>
         <small>© <span class="yr">2026</span> Wes Jones</small>
       </div>
