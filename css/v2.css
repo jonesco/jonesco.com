@@ -122,3 +122,25 @@
   .app { padding-top: 40px; padding-bottom: 64px; }
   .app-icon { width: 64px; height: 64px; }
 }
+
+/* Phone menu: five links don't fit beside the logo, so under 641px a MENU button opens them as a black
+   panel under the bar (all links, large, ruled like the contact list) */
+.menu-toggle { display: none; }
+@media (max-width: 640px) {
+  .menu-toggle {
+    display: block; background: none; border: 2px solid var(--paper); color: var(--paper); cursor: pointer;
+    font-family: var(--label); font-weight: 700; font-size: 14px; letter-spacing: .03em; text-transform: uppercase;
+    padding: 8px 12px 6px; line-height: 1;
+  }
+  .menu-toggle:focus-visible { outline: 3px solid var(--highlight); outline-offset: 2px; }
+  .site-header nav {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0; background: var(--ink); padding: 0 16px 24px; border-top: 1px solid var(--line-dark);
+  }
+  .site-header.is-open nav { display: flex; }
+  .site-header nav a, .site-header nav a.opt {
+    display: block; padding: 16px 0 14px; border-top: 0; border-bottom: 1px solid var(--line-dark);
+    font-size: 26px; letter-spacing: 0;
+  }
+  .site-header nav a:hover { color: var(--highlight); }
+}

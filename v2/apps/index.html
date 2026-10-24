@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="/fonts/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jonesco/system@2.0.0/system.css" />
     <link rel="stylesheet" href="/css/jonesco.css?v=57" />
-    <link rel="stylesheet" href="/css/v2.css?v=11" />
+    <link rel="stylesheet" href="/css/v2.css?v=12" />
     <link rel="stylesheet" href="/css/phone-video.css?v=3" />
 
     <!-- Structured data for AI and search engines -->
@@ -90,7 +90,8 @@
         <a class="brand" href="/v2/" aria-label="Jonesco, home">
           <picture><source media="(max-width: 329px)" srcset="/images/jonesco-logo-j.svg" /><source media="(max-width: 399px)" srcset="/images/jonesco-logo-jns.svg" /><img src="/images/jonesco-logo.svg" alt="Jonesco" /></picture>
         </a>
-        <nav>
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav">
           <a href="/v2/#work">Work</a>
           <a href="/v2/#process" class="opt">How I work</a>
           <a href="/v2/#about" class="opt">About</a>
@@ -192,6 +193,21 @@
       </div>
     </footer>
     <script src="/js/phone-video.js?v=1" defer></script>
+    <script>
+      // Phone menu: the MENU button opens the header links as a black panel; a link, Escape or a second tap closes it
+      (function () {
+        var header = document.querySelector('.site-header'), btn = header && header.querySelector('.menu-toggle');
+        if (!btn) return;
+        function set(open) {
+          header.classList.toggle('is-open', open);
+          btn.setAttribute('aria-expanded', open);
+          btn.textContent = open ? 'Close' : 'Menu';
+        }
+        btn.addEventListener('click', function () { set(!header.classList.contains('is-open')); });
+        header.querySelectorAll('nav a').forEach(function (a) { a.addEventListener('click', function () { set(false); }); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && header.classList.contains('is-open')) { set(false); btn.focus(); } });
+      })();
+    </script>
     <script>document.querySelectorAll('.yr').forEach(e => e.textContent = new Date().getFullYear());</script>
   </body>
 </html>
