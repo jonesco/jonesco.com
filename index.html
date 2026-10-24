@@ -87,7 +87,8 @@
         <a class="brand" href="/" aria-label="Jonesco, home">
           <picture><source media="(max-width: 329px)" srcset="/images/jonesco-logo-j.svg" /><source media="(max-width: 399px)" srcset="/images/jonesco-logo-jns.svg" /><img src="/images/jonesco-logo.svg" alt="Jonesco" /></picture>
         </a>
-        <nav>
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav">
           <a href="/#work">Work</a>
           <a href="/#process" class="opt">How I work</a>
           <a href="/#about" class="opt">About</a>
@@ -323,6 +324,21 @@
         track.addEventListener('scrollend', update);
         window.addEventListener('resize', update);
         update();
+      })();
+    </script>
+    <script>
+      // Phone menu: the MENU button opens the header links as a black panel; a link, Escape or a second tap closes it
+      (function () {
+        var header = document.querySelector('.site-header'), btn = header && header.querySelector('.menu-toggle');
+        if (!btn) return;
+        function set(open) {
+          header.classList.toggle('is-open', open);
+          btn.setAttribute('aria-expanded', open);
+          btn.textContent = open ? 'Close' : 'Menu';
+        }
+        btn.addEventListener('click', function () { set(!header.classList.contains('is-open')); });
+        header.querySelectorAll('nav a').forEach(function (a) { a.addEventListener('click', function () { set(false); }); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && header.classList.contains('is-open')) { set(false); btn.focus(); } });
       })();
     </script>
     <script>document.querySelectorAll('.yr').forEach(e => e.textContent = new Date().getFullYear());</script>
