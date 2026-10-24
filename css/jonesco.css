@@ -325,7 +325,7 @@ li.special-item::marker { color: var(--ink); }
 .carousel-nav { display: flex; gap: 8px; }
 .carousel-nav button {
   width: 44px; height: 44px; padding: 0; border: var(--rule); background: var(--paper); color: var(--ink);
-  font-size: 20px; line-height: 1; cursor: pointer;
+  font-family: var(--label); font-weight: 700; font-size: 20px; line-height: 1; cursor: pointer;
 }
 .carousel-nav button:hover:not(:disabled) { background: var(--ink); color: var(--paper); }
 .carousel-nav button:focus-visible, .endorsements:focus-visible { outline: 3px solid var(--highlight); outline-offset: 2px; }
