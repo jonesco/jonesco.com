@@ -116,7 +116,6 @@ html.compact-header .apps-hero > div.apps-intro { background: var(--newsprint); 
 html.compact-header .apps-hero > div.apps-intro h1 { border-bottom: 0; padding-bottom: 0; margin-bottom: 20px; }
 .apps-intro .v2-intro { margin-bottom: 0; }
 .app { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; border-top: var(--rule); padding-top: 56px; padding-bottom: 96px; }
-.app.flip .app-info { order: 2; }
 .app-head { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
 .app-icon { width: 88px; height: 88px; border-radius: 22.37%; box-shadow: 0 0 5px rgba(0,0,0,.2); flex: none; }   /* the app icon's own rounded shape */
 .app-name { font-family: var(--label); text-transform: none; letter-spacing: 0; font-size: clamp(30px, 3.2vw, 40px); line-height: 1.05; margin: 0 0 6px; }
@@ -128,7 +127,6 @@ html.compact-header .apps-hero > div.apps-intro h1 { border-bottom: 0; padding-b
 
 @media (max-width: 900px) {
   .app { grid-template-columns: 1fr; gap: 32px; }
-  .app.flip .app-info { order: 0; }
 }
 @media (max-width: 640px) {
   .apps-hero { padding-top: 24px; padding-bottom: 40px; }
