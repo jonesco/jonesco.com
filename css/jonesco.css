@@ -341,6 +341,7 @@ li.special-item::marker { color: var(--ink); }
 /* Each card spans the track's two rows as a subgrid, so the names start on the same line across cards */
 .endorsement { margin: 0; scroll-snap-align: start; background: var(--newsprint); padding: 28px; grid-row: span 2; display: grid; grid-template-rows: subgrid; }
 .endorsement blockquote { margin: 0; font-size: 19px; line-height: 1.45; }
+.endorsement .hang { margin-left: -.5em; }   /* hanging quote: the opening “ (0.5em wide in Trade Gothic) sits outside the text edge */
 .endorsement figcaption { display: flex; flex-direction: column; gap: 4px; padding-top: 24px; }
 .endorsement figcaption strong { font-family: var(--label); font-weight: 700; font-size: 18px; }
 .endorsement figcaption span { font-size: 14px; line-height: 1.4; color: var(--muted); }
