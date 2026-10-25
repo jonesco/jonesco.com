@@ -30,7 +30,7 @@
 
 .v2-section { padding-bottom: 104px; }
 .v2-lede {
-  font-family: inherit; font-weight: 400; text-transform: none; letter-spacing: -.01em;
+  font-family: inherit; font-weight: 700; text-transform: none; letter-spacing: -.01em;
   font-size: clamp(26px, 3vw, 40px); line-height: 1.2; max-width: 22em; margin: 0 0 20px; text-wrap: balance;
 }
 .v2-intro { font-size: 18px; line-height: 1.55; color: #333; max-width: 40em; margin: 0 0 48px; }
