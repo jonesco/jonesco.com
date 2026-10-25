@@ -56,7 +56,7 @@
 
 /* How I work: four numbered steps (a real sequence) */
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
-.step { border-top: 4px solid var(--ink); padding-top: 16px; }
+.step { background: var(--newsprint); padding: 28px; }   /* newsprint panel, like the work tiles and quotes */
 .step-num { display: block; font-family: var(--display); font-weight: 700; font-size: 56px; line-height: .9; margin-bottom: 14px; }
 .step h3 { font-family: var(--label); text-transform: none; letter-spacing: 0; font-size: 24px; line-height: 1.15; margin: 0 0 10px; }
 .step p { font-size: 16px; line-height: 1.5; color: #333; margin: 0; }
