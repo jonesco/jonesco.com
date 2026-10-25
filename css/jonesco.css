@@ -355,7 +355,11 @@ li.special-item::marker { color: var(--ink); }
 
 /* Apps page (/apps): three products, not a case study. The lead sentence is the page title, then one section per app:
    icon, name, platforms, one-liner and story beside its phone demo on newsprint; sides alternate */
-.apps-hero { padding-top: 56px; padding-bottom: 72px; }
+.apps-hero { padding-top: 56px; padding-bottom: 56px; }
+/* the page intro on a newsprint panel; html.compact-header outranks the case-study rules for an inner page's first block and h1 */
+html.compact-header .apps-hero > div.apps-intro { background: var(--newsprint); padding: 48px; }
+html.compact-header .apps-hero > div.apps-intro h1 { border-bottom: 0; padding-bottom: 0; margin-bottom: 20px; }
+.apps-intro .v2-intro { margin-bottom: 0; }
 .app { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; border-top: var(--rule); padding-top: 56px; padding-bottom: 96px; }
 .app.flip .app-info { order: 2; }
 .app-head { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
@@ -372,7 +376,8 @@ li.special-item::marker { color: var(--ink); }
   .app.flip .app-info { order: 0; }
 }
 @media (max-width: 640px) {
-  .apps-hero { padding-top: 32px; padding-bottom: 48px; }
+  .apps-hero { padding-top: 24px; padding-bottom: 40px; }
+  html.compact-header .apps-hero > div.apps-intro { padding: 28px; }
   .app { padding-top: 40px; padding-bottom: 64px; }
   .app-icon { width: 64px; height: 64px; }
 }
