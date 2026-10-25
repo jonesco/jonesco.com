@@ -68,6 +68,7 @@
 .facts li { font-size: 16px; line-height: 1.5; padding: 14px 0; border-bottom: var(--thin); }
 
 #takes .takes-list { margin: 0; max-width: none; }
+#contact .contactarea h5 { text-transform: none; letter-spacing: 0; }   /* the name in sentence case, not caps */
 .contact-intro { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; max-width: 32em; margin: -12px 0 32px; }
 
 @media (max-width: 900px) {
