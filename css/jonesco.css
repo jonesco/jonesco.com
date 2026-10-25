@@ -265,7 +265,7 @@ li.special-item::marker { color: var(--ink); }
 .hero-links { display: flex; flex-wrap: wrap; gap: 16px; margin: 0; }
 /* jonesco.css keeps its own copy of .sys-btn (from before the site loaded patterns.css), which can load later and
    would turn the ghost black again, so the ghost is restated here */
-.sys-btn.sys-btn--ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+.sys-btn.sys-btn--ghost { background: var(--newsprint); color: var(--ink); border-color: var(--newsprint); }   /* v2: the secondary is a newsprint block, matching the tiles and panels */
 .sys-btn.sys-btn--ghost:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .work-view {
   font-family: var(--label); font-weight: 700; font-size: 15px; letter-spacing: .03em; text-transform: uppercase;
