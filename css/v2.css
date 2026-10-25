@@ -123,7 +123,7 @@ html.compact-header .apps-hero > div.apps-intro h1 { border-bottom: 0; padding-b
 .app-platforms { font-family: var(--label); font-weight: 700; font-size: 13px; letter-spacing: .03em; text-transform: uppercase; color: var(--muted); margin: 0; }
 .app .app-line { font-family: var(--label); font-weight: 700; letter-spacing: 0; }   /* each app’s one-line intro in Bold No. 2, the wider bold (not the narrow body bold) */
 .app-about p { font-size: 17px; line-height: 1.6; max-width: 36em; }
-.app-media { background: var(--newsprint); padding: 48px 24px 32px; }
+.app-media { padding: 0; }   /* the phone demo sits on the page, no panel */
 .app-media .pv-demo { position: static; }
 
 @media (max-width: 900px) {
