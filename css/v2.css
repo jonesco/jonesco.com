@@ -107,10 +107,9 @@
 @media (max-width: 900px) { .endorsements { grid-auto-columns: calc((100% - 40px) / 2); } }
 @media (max-width: 640px) { .endorsements { grid-auto-columns: 100%; } }
 
-/* Apps page (/apps): three products, not a case study. Condensed caps page title, then one section per app:
+/* Apps page (/apps): three products, not a case study. The lead sentence is the page title, then one section per app:
    icon, name, platforms, one-liner and story beside its phone demo on newsprint; sides alternate */
 .apps-hero { padding-top: 56px; padding-bottom: 72px; }
-.apps-hero h1 { padding-bottom: 20px; border-bottom: var(--rule); margin-bottom: 28px; }
 .app { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; border-top: var(--rule); padding-top: 56px; padding-bottom: 96px; }
 .app.flip .app-info { order: 2; }
 .app-head { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
