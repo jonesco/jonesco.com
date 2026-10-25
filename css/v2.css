@@ -38,11 +38,15 @@
 /* Selected work: text cards, each under a rule, numbered with the case study id */
 .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 40px; margin-top: 32px; }
 .work-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
-.work-card .tile-image { display: block; margin-bottom: 14px; }   /* same 4:3 bordered thumbnail as the current home tiles */
+/* Each card is one tile: the image on top, the words below on newsprint (the image drops its border so the two read as one) */
+.work-card { background: var(--newsprint); }
+.work-card .tile-image { display: block; border: 0; }
+.work-card .work-num { margin: 20px 24px 6px; }
+.work-card .work-foot { margin: 0 24px 24px; }
 .work-card:hover .tile-image img { transform: scale(1.04); }
 .work-num { font-family: var(--label); font-size: 13px; letter-spacing: .03em; color: #888; margin-bottom: 6px; }
-.work-card h3 { font-family: var(--label); text-transform: none; letter-spacing: 0; font-size: 26px; line-height: 1.15; margin: 0 0 10px; transition: color .15s; }
-.work-card p { font-size: 16px; line-height: 1.5; color: #333; margin: 0 0 20px; flex: 1; }
+.work-card h3 { font-family: var(--label); text-transform: none; letter-spacing: 0; font-size: 26px; line-height: 1.15; margin: 0 24px 10px; transition: color .15s; }
+.work-card p { font-size: 16px; line-height: 1.5; color: #333; margin: 0 24px 20px; flex: 1; }
 .work-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .work-tag {
   background: var(--ink); color: var(--highlight);
@@ -149,12 +153,3 @@
   .site-header nav a:hover { color: var(--highlight); }
 }
 
-/* Newsprint bands: the intro and Process run full width on newsprint to divide the page; the sections after them
-   (Work, About) get the same space at the top. Full bleed via shadow + clip, so the markup keeps its .page column */
-.hero, #process { background: var(--newsprint); box-shadow: 0 0 0 100vmax var(--newsprint); clip-path: inset(0 -100vmax); }
-#process { padding-top: 64px; }
-#work, #about { padding-top: 72px; }
-@media (max-width: 640px) {
-  #process { padding-top: 40px; }
-  #work, #about { padding-top: 48px; }
-}
