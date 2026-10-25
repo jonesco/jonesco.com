@@ -256,7 +256,7 @@ li.special-item::marker { color: var(--ink); }
 .hero .eyebrow { border-bottom: 0; padding-bottom: 0; color: var(--muted); }
 /* The lede is a sentence, so it uses the body face at display size rather than condensed caps */
 .hero-lede {
-  font-family: inherit; font-weight: 700; text-transform: none; letter-spacing: -.015em;
+  font-family: inherit; font-weight: 400; text-transform: none; letter-spacing: -.015em;
   font-size: clamp(36px, 5.4vw, 72px); line-height: 1.06; max-width: 18em; margin: 0 0 28px; text-wrap: balance;
 }
 .hero-lede strong { font-weight: 700; }
