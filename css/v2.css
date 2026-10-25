@@ -117,6 +117,7 @@
 .app-icon { width: 88px; height: 88px; border-radius: 22.37%; box-shadow: 0 0 5px rgba(0,0,0,.2); flex: none; }   /* the app icon's own rounded shape */
 .app-name { font-family: var(--label); text-transform: none; letter-spacing: 0; font-size: clamp(30px, 3.2vw, 40px); line-height: 1.05; margin: 0 0 6px; }
 .app-platforms { font-family: var(--label); font-weight: 700; font-size: 13px; letter-spacing: .03em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.app .app-line { font-weight: 700; }   /* each app’s one-line intro, bold like the home leads */
 .app-about p { font-size: 17px; line-height: 1.6; max-width: 36em; }
 .app-media { background: var(--newsprint); padding: 48px 24px 32px; }
 .app-media .pv-demo { position: static; }
