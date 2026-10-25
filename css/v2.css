@@ -148,3 +148,13 @@
   }
   .site-header nav a:hover { color: var(--highlight); }
 }
+
+/* Newsprint bands: the intro and Process run full width on newsprint to divide the page; the sections after them
+   (Work, About) get the same space at the top. Full bleed via shadow + clip, so the markup keeps its .page column */
+.hero, #process { background: var(--newsprint); box-shadow: 0 0 0 100vmax var(--newsprint); clip-path: inset(0 -100vmax); }
+#process { padding-top: 64px; }
+#work, #about { padding-top: 72px; }
+@media (max-width: 640px) {
+  #process { padding-top: 40px; }
+  #work, #about { padding-top: 48px; }
+}
