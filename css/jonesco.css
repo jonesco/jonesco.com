@@ -395,9 +395,9 @@ li.special-item::marker { color: var(--ink); }
   .site-header.is-open nav { display: flex; }
   .site-header nav a, .site-header nav a.opt {
     display: block; padding: 16px 0 14px; border-top: 0; border-bottom: 1px solid var(--line-dark);
-    font-size: 26px; letter-spacing: 0;
+    font-size: 22px; letter-spacing: 0;
   }
-  .site-header nav a:hover { color: var(--highlight); }
+  .site-header nav a:hover, .site-header nav a.opt:hover { color: var(--highlight); border-bottom-color: var(--highlight); }   /* every link, including the .opt ones */
 }
 
 
