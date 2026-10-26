@@ -305,11 +305,9 @@ li.special-item::marker { color: var(--ink); }
 .step h3 { font-family: var(--label); text-transform: none; letter-spacing: 0; font-size: 24px; line-height: 1.15; margin: 0 0 10px; }
 .step p { font-size: 16px; line-height: 1.5; color: #333; margin: 0; }
 
-/* About: story on the left, facts on the right */
-.about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 56px; margin-top: 12px; }
+/* Point of view: one column of text; a takes link can go under it later */
+.about-text { margin-top: 12px; }
 .about-text p { font-size: 18px; line-height: 1.6; max-width: 36em; }
-.facts ul { list-style: none; margin: 0; padding: 0; }
-.facts li { font-size: 16px; line-height: 1.5; padding: 14px 0; border-bottom: var(--thin); }
 
 #takes .takes-list { margin: 0; max-width: none; }
 #contact .contactarea h5 { text-transform: none; letter-spacing: 0; }   /* the name in sentence case, not caps */
@@ -318,7 +316,6 @@ li.special-item::marker { color: var(--ink); }
 @media (max-width: 900px) {
   .work-grid { grid-template-columns: 1fr 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
-  .about-grid { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 640px) {
   .hero { padding-top: 36px; padding-bottom: 64px; }
