@@ -389,16 +389,16 @@ html.compact-header .apps-hero > div.apps-intro h1 { border-bottom: 0; padding-b
     padding: 8px 12px 6px; line-height: 1;
   }
   .menu-toggle:focus-visible { outline: 3px solid var(--highlight); outline-offset: 2px; }
-  .site-header nav {
+  .site-header:has(.menu-toggle) nav {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
     flex-direction: column; gap: 0; background: var(--ink); padding: 0 16px 24px; border-top: 1px solid var(--line-dark);
   }
   .site-header.is-open nav { display: flex; }
-  .site-header nav a, .site-header nav a.opt {
+  .site-header:has(.menu-toggle) nav a, .site-header:has(.menu-toggle) nav a.opt {
     display: block; padding: 16px 0 14px; border-top: 0; border-bottom: 1px solid var(--line-dark);
     font-size: 22px; letter-spacing: 0;
   }
-  .site-header nav a:hover, .site-header nav a.opt:hover { color: var(--highlight); border-bottom-color: var(--highlight); }   /* every link, including the .opt ones */
+  .site-header:has(.menu-toggle) nav a:hover, .site-header:has(.menu-toggle) nav a.opt:hover { color: var(--highlight); border-bottom-color: var(--highlight); }   /* every link, including the .opt ones */
 }
 
 
