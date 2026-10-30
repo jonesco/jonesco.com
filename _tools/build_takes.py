@@ -98,10 +98,7 @@ def page(title, desc, url, body, og_image=None, extra_head=''):
     <link rel="alternate" type="application/rss+xml" title="Takes by Wes Jones" href="/feed.xml" />
     <link rel="apple-touch-icon" sizes="180x180" href="/jonesco-bug180.png" />
     <link rel="apple-touch-icon" sizes="152x152" href="/jonesco-bug152.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jonesco/system@1.0.0/system.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jonesco/system@2.0.0/system.css" />
     <link rel="stylesheet" href="/css/jonesco.css?v={CSS_V}" />{extra_head}
   </head>
   <body>
@@ -221,7 +218,7 @@ def feed(takes):
 def share_card(t):
     """1200×630 share image: the take in big Trade Gothic on black."""
     return f'''<!doctype html><html><head><meta charset="utf-8">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jonesco/system@1.0.0/system.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jonesco/system@2.0.0/system.css">
 <style>
 html,body{{margin:0;width:1200px;height:630px;background:#000;color:#fff;overflow:hidden}}
 .card{{position:absolute;inset:0;padding:64px 72px;display:flex;flex-direction:column;justify-content:space-between}}
