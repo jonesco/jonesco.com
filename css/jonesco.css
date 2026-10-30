@@ -245,6 +245,165 @@ li.special-item::marker { color: var(--ink); }
 
 
 /* ===========================
+   HOME V2 (hero, work cards, how I work, about, takes)
+   =========================== */
+
+.eyebrow {
+  font-family: var(--label); font-weight: 700; font-size: 14px; letter-spacing: .03em; text-transform: uppercase;
+  margin: 0 0 20px; padding-bottom: 12px; border-bottom: var(--rule);
+}
+.hero { padding-top: 64px; padding-bottom: 96px; }
+.hero .eyebrow { border-bottom: 0; padding-bottom: 0; color: var(--muted); }
+/* The lede is a sentence, so it uses the body face at display size rather than condensed caps */
+.hero-lede {
+  font-family: inherit; font-weight: 700; text-transform: none; letter-spacing: -.015em;
+  font-size: clamp(36px, 5.4vw, 72px); line-height: 1.06; max-width: 18em; margin: 0 0 28px; text-wrap: balance;
+}
+.hero-lede strong { font-weight: 700; }
+.hero-intro { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; max-width: 36em; margin: 0 0 28px; }
+/* Primary (See selected work) and secondary (Apps) are the system buttons: .sys-btn and .sys-btn--ghost */
+.hero-links { display: flex; flex-wrap: wrap; gap: 16px; margin: 0; }
+/* jonesco.css keeps its own copy of .sys-btn (from before the site loaded patterns.css), which can load later and
+   would turn the ghost black again, so the ghost is restated here */
+.sys-btn.sys-btn--ghost { background: var(--newsprint); color: var(--ink); border-color: var(--newsprint); }   /* v2: the secondary is a newsprint block, matching the tiles and panels */
+.sys-btn.sys-btn--ghost:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.work-view {
+  font-family: var(--label); font-weight: 700; font-size: 15px; letter-spacing: .03em; text-transform: uppercase;
+  text-decoration: none; color: var(--ink);
+}
+
+.v2-section { padding-bottom: 104px; }
+.v2-lede {
+  font-family: inherit; font-weight: 700; text-transform: none; letter-spacing: -.01em;
+  font-size: clamp(26px, 3vw, 40px); line-height: 1.2; max-width: 22em; margin: 0 0 20px; text-wrap: balance;
+}
+.v2-intro { font-size: 18px; line-height: 1.55; color: #333; max-width: 40em; margin: 0 0 48px; }
+
+/* Selected work: text cards, each under a rule, numbered with the case study id */
+.work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 40px; margin-top: 32px; }
+.work-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+/* Each card is one tile: the image on top, the words below on newsprint (the image drops its border so the two read as one) */
+.work-card { background: var(--newsprint); }
+.work-card .tile-image { display: block; border: 0; }
+.work-card .work-num { margin: 20px 24px 6px; }
+.work-card .work-foot { margin: 0 24px 24px; }
+.work-card:hover .tile-image img { transform: scale(1.04); }
+.work-num { font-family: var(--label); font-size: 13px; letter-spacing: .03em; color: #888; margin-bottom: 6px; }
+.work-card h3 { font-family: var(--label); text-transform: none; letter-spacing: 0; font-size: 26px; line-height: 1.15; margin: 0 24px 10px; transition: color .15s; }
+.work-card p { font-size: 16px; line-height: 1.5; color: #333; margin: 0 24px 20px; flex: 1; }
+.work-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.work-tag {
+  background: var(--ink); color: var(--highlight);
+  font-family: var(--label); font-weight: 700; font-size: 12px; letter-spacing: .03em; text-transform: uppercase; padding: 5px 10px;
+}
+.work-card:hover h3, .work-card:hover .work-view { color: var(--accent); }
+
+/* How I work: four numbered steps (a real sequence) */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+.step { background: var(--newsprint); padding: 28px; }   /* newsprint panel, like the work tiles and quotes */
+.step-num { display: block; font-family: var(--display); font-weight: 700; font-size: 56px; line-height: .9; margin-bottom: 14px; }
+.step h3 { font-family: var(--label); text-transform: none; letter-spacing: 0; font-size: 24px; line-height: 1.15; margin: 0 0 10px; }
+.step p { font-size: 16px; line-height: 1.5; color: #333; margin: 0; }
+
+/* Point of view: one column of text; a takes link can go under it later */
+.about-text { margin-top: 12px; }
+.about-text p { font-size: 18px; line-height: 1.6; max-width: 36em; }
+
+#takes .takes-list { margin: 0; max-width: none; }
+#contact .contactarea h5 { text-transform: none; letter-spacing: 0; }   /* the name in sentence case, not caps */
+.contact-intro { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; max-width: 32em; margin: -12px 0 32px; }
+
+@media (max-width: 900px) {
+  .work-grid { grid-template-columns: 1fr 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .hero { padding-top: 36px; padding-bottom: 64px; }
+  .v2-section { padding-bottom: 72px; }
+  .work-grid, .steps { grid-template-columns: 1fr; gap: 36px; }
+}
+
+
+/* Endorsements: excerpts from LinkedIn recommendations, quoted exactly.
+   A scroll-snap carousel: three cards on desktop, two on tablets, one on phones; arrows in the eyebrow row */
+.eyebrow-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
+.carousel-nav { display: flex; gap: 8px; }
+.carousel-nav button {
+  width: 44px; height: 44px; padding: 0; border: var(--rule); background: var(--paper); color: var(--ink);
+  font-family: var(--label); font-weight: 700; font-size: 20px; line-height: 1; cursor: pointer;
+}
+.carousel-nav button:hover:not(:disabled) { background: var(--ink); color: var(--paper); }
+.carousel-nav button:focus-visible, .endorsements:focus-visible { outline: 3px solid var(--highlight); outline-offset: 2px; }
+.carousel-nav button:disabled { opacity: .25; cursor: default; }
+.endorsements {
+  display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 80px) / 3); grid-template-rows: auto auto; gap: 0 40px; margin-top: 32px;
+  overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none;
+}
+.endorsements::-webkit-scrollbar { display: none; }
+/* Each card spans the track's two rows as a subgrid, so the names start on the same line across cards */
+.endorsement { margin: 0; scroll-snap-align: start; background: var(--newsprint); padding: 28px; grid-row: span 2; display: grid; grid-template-rows: subgrid; }
+.endorsement blockquote { margin: 0; font-size: 19px; line-height: 1.45; }
+.endorsement .hang { margin-left: -.5em; }   /* hanging quote: the opening “ (0.5em wide in Trade Gothic) sits outside the text edge */
+.endorsement figcaption { display: flex; flex-direction: column; gap: 4px; padding-top: 24px; }
+.endorsement figcaption strong { font-family: var(--label); font-weight: 700; font-size: 18px; }
+.endorsement figcaption span { font-size: 14px; line-height: 1.4; color: var(--muted); }
+@media (max-width: 900px) { .endorsements { grid-auto-columns: calc((100% - 40px) / 2); } }
+@media (max-width: 640px) { .endorsements { grid-auto-columns: 100%; } }
+
+
+/* Apps page (/apps): three products, not a case study. The lead sentence is the page title, then one section per app:
+   icon, name, platforms, one-liner and story beside its phone demo on newsprint; sides alternate */
+.apps-hero { padding-top: 56px; padding-bottom: 56px; }
+/* the page intro on a newsprint panel; html.compact-header outranks the case-study rules for an inner page's first block and h1 */
+html.compact-header .apps-hero > div.apps-intro { background: var(--newsprint); padding: 48px; }
+html.compact-header .apps-hero > div.apps-intro h1 { border-bottom: 0; padding-bottom: 0; margin-bottom: 20px; }
+.apps-intro .v2-intro { margin-bottom: 0; }
+.app { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; border-top: var(--rule); padding-top: 56px; padding-bottom: 96px; }
+.app-head { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
+.app-icon { width: 88px; height: 88px; border-radius: 22.37%; box-shadow: 0 0 5px rgba(0,0,0,.2); flex: none; }   /* the app icon's own rounded shape */
+.app-name { font-family: var(--label); text-transform: none; letter-spacing: 0; font-size: clamp(30px, 3.2vw, 40px); line-height: 1.05; margin: 0 0 6px; }
+.app-platforms { font-family: var(--label); font-weight: 700; font-size: 13px; letter-spacing: .03em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.app .app-line { font-family: var(--label); font-weight: 700; letter-spacing: 0; }   /* each app’s one-line intro in Bold No. 2, the wider bold (not the narrow body bold) */
+.app-about p { font-size: 17px; line-height: 1.6; max-width: 36em; }
+.app-media { padding: 0; }   /* the phone demo sits on the page, no panel */
+.app-media .pv-demo { position: static; }
+
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 640px) {
+  .apps-hero { padding-top: 24px; padding-bottom: 40px; }
+  html.compact-header .apps-hero > div.apps-intro { padding: 28px; }
+  .app { padding-top: 40px; padding-bottom: 64px; }
+  .app-icon { width: 64px; height: 64px; }
+}
+
+
+/* Phone menu: five links don't fit beside the logo, so under 641px a MENU button opens them as a black
+   panel under the bar (all links, large, ruled like the contact list) */
+.menu-toggle { display: none; }
+@media (max-width: 640px) {
+  .menu-toggle {
+    display: block; background: none; border: 2px solid var(--paper); color: var(--paper); cursor: pointer;
+    font-family: var(--label); font-weight: 700; font-size: 14px; letter-spacing: .03em; text-transform: uppercase;
+    padding: 8px 12px 6px; line-height: 1;
+  }
+  .menu-toggle:focus-visible { outline: 3px solid var(--highlight); outline-offset: 2px; }
+  .site-header nav {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0; background: var(--ink); padding: 0 16px 24px; border-top: 1px solid var(--line-dark);
+  }
+  .site-header.is-open nav { display: flex; }
+  .site-header nav a, .site-header nav a.opt {
+    display: block; padding: 16px 0 14px; border-top: 0; border-bottom: 1px solid var(--line-dark);
+    font-size: 22px; letter-spacing: 0;
+  }
+  .site-header nav a:hover, .site-header nav a.opt:hover { color: var(--highlight); border-bottom-color: var(--highlight); }   /* every link, including the .opt ones */
+}
+
+
+
+/* ===========================
    RESPONSIVE
    =========================== */
 
