@@ -51,10 +51,10 @@ URL: https://jonesco.com/wayblazer
 **Summary**: Built in one month, MagicStaff is a developer staffing solution for global teams powered by Google OR-Tools optimization. Generates weighted staffing assignment recommendations accounting for skill trees, upskilling goals, schedule, workload, and worker preferences. Includes employee skill tree profiles, admin notes, and a calendar view showing staffing impact company-wide.
 URL: https://jonesco.com/magicstaff
 
-### CPay Sales Assistant Workshop
-**Client**: Central Payment Corporation (merchant account provider)
+### Sales Assistant Workshop
+**Client**: Global Payments (merchant account provider)
 **Role**: Design lead and sprint facilitator
-**Summary**: Hosted a 4-day Google Ventures Design Sprint with Central Payment Corporation's sales team to design a unified sales assistant tool. Facilitated sketching sessions, storyboarding, and delivered a polished high-fidelity clickable prototype using Ionic Platform resources — all within four days.
+**Summary**: Hosted a 4-day Google Ventures Design Sprint with Global Payments' sales team to design a unified sales assistant tool. Facilitated sketching sessions, storyboarding, and delivered a polished high-fidelity clickable prototype using Ionic Platform resources — all within four days.
 URL: https://jonesco.com/cpay
 
 ## Contact
