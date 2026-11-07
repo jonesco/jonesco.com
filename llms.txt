@@ -52,7 +52,7 @@ URL: https://jonesco.com/wayblazer
 URL: https://jonesco.com/magicstaff
 
 ### Sales Assistant Workshop
-**Client**: A merchant account provider division of Global Payments (Fortune 500 payments company serving millions of businesses worldwide)
+**Client**: A merchant account provider within TSYS, now part of Global Payments (Fortune 500 payments company serving millions of businesses worldwide). Run by the Netspend design team Wes led as Principal UX Designer; Netspend was a TSYS company at the time.
 **Role**: Design lead and sprint facilitator
 **Summary**: Hosted a 4-day Google Ventures Design Sprint with Global Payments' sales team to design a unified sales assistant tool. Facilitated sketching sessions, storyboarding, and delivered a polished high-fidelity clickable prototype using Ionic Platform resources — all within four days.
 URL: https://jonesco.com/cpay
