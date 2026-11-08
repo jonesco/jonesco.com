@@ -191,11 +191,11 @@ section, [id] { scroll-margin-top: var(--hdr-small); }
 
 .compact-header .page > div:first-child { padding-top: 56px; }
 
-/* "Case Study #5487" tag: black block, yellow type */
+/* "Case Study #5487" tag: the system 3.0.0 dark tag, medium (a black pill, yellow type, 32px); this site is pinned to 2.0.0 */
 #rcorners1 {
-  display: inline-block; background: var(--ink); color: var(--highlight);
-  font-family: var(--label); font-weight: 700; font-size: 13px; letter-spacing: .03em; text-transform: uppercase;
-  padding: 6px 12px; margin: 0 0 24px; border: 0;
+  display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 999px; background: var(--ink); color: var(--highlight);
+  font-family: var(--label); font-weight: 700; font-size: 13px; line-height: 1; letter-spacing: .03em; text-transform: uppercase; white-space: nowrap;
+  margin: 0 0 24px; border: 0;
 }
 .compact-header .page > div:first-child h1 { padding-bottom: 20px; border-bottom: var(--rule); margin-bottom: 24px; }
 /* Spacing where rules used to separate the intro, the Challenges / My role lists and the work below */
@@ -292,11 +292,12 @@ li.special-item::marker { color: var(--ink); }
 .work-card h3 { font-family: var(--label); text-transform: none; letter-spacing: 0; font-size: 26px; line-height: 1.15; margin: 0 24px 10px; transition: color .15s; }
 .work-card p { font-size: 16px; line-height: 1.5; color: #333; margin: 0 24px 20px; flex: 1; }
 .work-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+/* the system 3.0.0 white tag, small: a white pill, black type, 24px (white because it sits on the newsprint card) */
 .work-tag {
-  background: var(--ink); color: var(--highlight);
-  font-family: var(--label); font-weight: 700; font-size: 12px; letter-spacing: .03em; text-transform: uppercase; padding: 5px 10px;
+  display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 999px; background: var(--paper); color: var(--ink);
+  font-family: var(--label); font-weight: 700; font-size: 12px; line-height: 1; letter-spacing: .03em; text-transform: uppercase; white-space: nowrap;
 }
-.work-card:hover h3, .work-card:hover .work-view { color: var(--accent); }
+.work-card:hover .work-view { color: var(--accent); }   /* only the "View case" label changes on hover; the title stays black */
 
 /* How I work: four numbered steps (a real sequence) */
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
