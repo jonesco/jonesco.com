@@ -284,7 +284,7 @@ li.special-item::marker { color: var(--ink); }
 .work-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
 /* Each card is one tile: the image on top, the words below on newsprint (the image drops its border so the two read as one) */
 .work-card { background: var(--newsprint); }
-.work-card .tile-image { display: block; border: 0; }
+.work-card .tile-image { display: block; border: 0; border-bottom: 1px solid #fff; }   /* system 3.1.0 Card hairline, copied in while pinned to 2.0.0 */
 .work-card .work-num { margin: 20px 24px 6px; }
 .work-card .work-foot { margin: 0 24px 24px; }
 .work-card:hover .tile-image img { transform: scale(1.04); }
