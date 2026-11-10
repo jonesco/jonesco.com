@@ -2,25 +2,25 @@
 """Build /archive: the projects from the original jonesco.com, kept quiet.
 
 Content is word for word from the old site, snapshotted in _tools/archive-source.json (projects)
-and ABOUT below. Every page is noindex, nofollow; nothing on the main site links here; /archive is
+Every page is noindex, nofollow; nothing on the main site links here; /archive is
 left out of sitemap.xml and llms.txt and disallowed in robots.txt.
 
-Writes archive/index.html, archive/<slug>.html, archive/about.html, and a redirect stub at each old
-jonesco.com URL (/vitaminwater.html → /archive/vitaminwater) so old links keep working.
+Writes archive/index.html, archive/<slug>.html, and a redirect stub at each old jonesco.com URL
+(/vitaminwater.html → /archive/vitaminwater) so old links keep working. The old /about goes home.
   python3 _tools/build_archive.py
 """
 import html, json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://jonesco.com'
-CSS_V = 61
+CSS_V = 62
 
 # grid order from the old home page (Wayblazer skipped: it is a case study on this site; PartsTree dropped)
 ORDER = ['firefly', 'wellsmith', 'ironsight', 'prime', 'rta', 'youga', 'dort', 'travelocity',
          'joule', 'vitaminwater', 'rembrandt']
 THUMB = {'firefly': 'firefly_thumb.jpg', 'wellsmith': 'wellsmith_thumb.jpg', 'ironsight': 'ironsight_thumb.jpg',
-         'prime': 'prime_thumb.jpg', 'rta': 'rta-shirts_thumb.jpg', 'youga': 'youga_thumb.png', 'dort': 'glbc_thumb.jpg',
-         'travelocity': 'travelocity_thumb.jpg', 'joule': 'joule_thumb.png', 'vitaminwater': 'vw_thumb.jpg',
+         'prime': 'prime_thumb.jpg', 'rta': 'rta-shirts_thumb.jpg', 'youga': 'youga_card.png', 'dort': 'glbc_card.jpg',
+         'travelocity': 'travelocity_thumb.jpg', 'joule': 'joule_card.png', 'vitaminwater': 'vw_thumb.jpg',
          'rembrandt': 'rembrandt_thumb.jpg'}
 # archive numbers, shown like the case study numbers
 NUM = {'firefly': 4565, 'wellsmith': 7828, 'ironsight': 1647, 'prime': 4832, 'rta': 5973, 'youga': 9650, 'dort': 4864, 'travelocity': 3966, 'joule': 3773, 'vitaminwater': 6016, 'rembrandt': 9118}
@@ -55,23 +55,6 @@ META = {
 TITLE_PARTS = {'Firefly', 'Wellsmith', 'Ironsight Brewers', 'Prime Institutional Group', 'RTA +', 'Cleveland Sports', 'Youga',
                'Have a drink', 'with a good friend.', 'Travelocity + CLE', 'Joule Energy', 'Unlock your', 'inner awesome.',
                'What makes a', 'Rembrandt a Rembrandt?'}
-
-ABOUT = {
-    'bio': ['I’ve always been a creative problem solver. And for more than two decades, it’s also been my career. I know how to create smart, engaging solutions that connect with the audience while supporting creative strategy.',
-            'But if you were to ask my parents what I do for a living, they’d proudly tell you, “He makes brochures.”'],
-    'clients': ['Microsoft', 'Samsung', 'IBM', 'S&P Global', 'ABB Robotics', 'Fidelity', 'PricewaterhouseCoopers', 'Hotels.com',
-                'Neuberger Berman', 'Lubrizol', 'Loctite', 'Glidden', 'Ridgid Tools', 'vitaminwater', 'University Hospitals',
-                'FirstMerit Bank', 'Great Lakes Brewing Co.', 'Fazoli’s', 'Cleveland Museum of Art', 'DARPA'],
-    'published': ['LogoLounge: Master Library, Volume 2 (2010)', 'Graphis Design 2004 (2004)',
-                  'Print Regional Annual (2002, 2003)', 'Communication Arts Design Annual (2003)'],
-    'awards': ['Judge’s Choice Award from the American Advertising Federation Cleveland',
-               'Judge’s Choice Award for Multimedia from the Houston Advertising Federation',
-               'Regional Gold Addy Awards from the American Advertising Federation'],
-    'gold_silver': ['American Advertising Federation Cleveland', 'AIGA Cleveland', 'The Art Directors Club of Houston',
-                    'American Advertising Federation Houston', 'Houston American Marketing Association',
-                    'Business Marketing Association, Houston Chapter', 'Dallas Society of Visual Communication'],
-    'education': ['BFA in Communication Design from Texas State University', 'Graduated summa cum laude'],
-}
 
 e = lambda s: html.escape(s, quote=False)
 
@@ -212,76 +195,49 @@ def project_page(p, nxt):
         next_band(nxt[0], 'Next in the archive', nxt[1]) + FOOTER
 
 
-# newer work parked here for now, ahead of the old projects: (href, thumb, number, name, description)
+# newer work parked here for now, ahead of the old projects: (href, thumb, number, name, description, tag)
 EXTRA = [('/network-intelligence', '/images/work/ini-thumb.jpg', 5260, 'IBM Network Intelligence',
-          'Designing how people oversee an AI agent that investigates network problems on its own.')]
+          'Designing how people oversee an AI agent that investigates network problems on its own.', 'AI agents')]
 
 
-def tile(href, src, num, name, desc):
-    return f'''          <a href="{href}">
-            <div class="tile-card">
-              <div class="tile-image"><img src="{src}" alt="" /></div>
-              <div class="tile-label">
-                <div class="csid"><p>#{num}</p></div>
-                <h2><strong>{e(name)}</strong></h2>
-                <p class="tile-description">{e(desc)}</p>
-              </div>
-            </div>
+def tile(href, src, num, name, desc, tag):
+    """Same card as the home page's Selected work: image on top, words on newsprint, a tag and View case at the foot."""
+    return f'''          <a class="work-card" href="{href}">
+            <span class="tile-image"><img src="{src}" alt="" /></span>
+            <span class="work-num">#{num}</span>
+            <h3>{e(name)}</h3>
+            <p>{e(desc)}</p>
+            <span class="work-foot"><span class="work-tag">{e(tag)}</span><span class="work-view">View case →</span></span>
           </a>'''
 
 
+# short card tags where the category line is too long for a pill
+TAG = {'wellsmith': 'Web and mobile', 'dort': 'SMS campaign', 'travelocity': ':30 TV spot'}
+
+
+def tag(slug):
+    c = TAG.get(slug) or META[slug][1]
+    return c[:1].upper() + c[1:]
+
+
 def index_page():
-    tiles = '\n'.join([tile(*x) for x in EXTRA] + [tile(f'/archive/{s}', f'/images/archive/thumb/{THUMB[s]}', NUM[s], META[s][2], DESC[s]) for s in ORDER])
+    tiles = '\n'.join([tile(*x) for x in EXTRA] + [tile(f'/archive/{s}', f'/images/archive/thumb/{THUMB[s]}', NUM[s], META[s][2], DESC[s], tag(s)) for s in ORDER])
     body = f'''
     <div id="root">
       <div class="page archive-index">
         <div>
           <h1><strong>/Archive</strong></h1>
         </div>
-        <div class="tile-grid">
+        <div class="work-grid">
 {tiles}
         </div>
-        <p class="archive-back"><a href="/archive/about">About, clients and awards from the original site</a></p>
       </div>
     </div>'''
     return head('Archive | Jonesco', 'Additional work.', '/archive/') + body + FOOTER
 
 
-def about_page():
-    A = ABOUT
-    ul = lambda xs: '<ul class="a">' + ''.join(f'<li class="special-item">{e(x)}</li>' for x in xs) + '</ul>'
-    body = f'''
-    <div id="root">
-      <div class="page archive-page">
-        <div>
-          <h5 id="rcorners1">About</h5>
-          <h1><strong>Wes Jones</strong></h1>
-          {''.join(f'<h4>{e(p)}</h4>' for p in A['bio'])}
-        </div>
-        <div class="cols-2">
-          <div>
-            <h5><strong>Clients:</strong></h5>
-            {ul(A['clients'])}
-          </div>
-          <div>
-            <h5><strong>Work published in:</strong></h5>
-            {ul(A['published'])}
-            <h5><strong>Awards:</strong></h5>
-            {ul(A['awards'])}
-            <h5><strong>Gold and Silver Awards from:</strong></h5>
-            {ul(A['gold_silver'])}
-            <h5><strong>Education:</strong></h5>
-            {ul(A['education'])}
-          </div>
-        </div>
-        <p class="archive-back"><a href="/archive/">All archive projects</a></p>
-      </div>
-    </div>'''
-    return head('About | Jonesco archive', A['bio'][0], '/archive/about') + body + FOOTER
-
-
 def stub(target):
-    """An old jonesco.com URL: send visitors on to the archive page (GitHub Pages can't 301)."""
+    """An old jonesco.com URL: send visitors on to its new page (GitHub Pages can't 301)."""
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8" />
 <meta name="robots" content="noindex, nofollow" />
@@ -306,9 +262,8 @@ def main():
         w(f'{slug}.html', stub(f'/archive/{slug}'))
         print(f'archive/{slug:12} hero {len(p["hero"])}  ' + ', '.join(f'{s["label"]} ({len(s["media"])})' for s in p['sections']))
     w('archive/index.html', index_page())
-    w('archive/about.html', about_page())
-    w('about.html', stub('/archive/about'))
-    print('archive/index.html, archive/about.html, and redirect stubs at the old URLs')
+    w('about.html', stub('/'))   # the archive's About page was retired 2026-11-10
+    print('archive/index.html and redirect stubs at the old URLs')
 
 
 if __name__ == '__main__':
