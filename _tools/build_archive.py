@@ -13,7 +13,7 @@ import html, json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://jonesco.com'
-CSS_V = 63
+CSS_V = 64
 
 # grid order from the old home page (Wayblazer skipped: it is a case study on this site; PartsTree dropped)
 ORDER = ['firefly', 'ironsight', 'prime', 'rta', 'dort', 'travelocity',
@@ -129,7 +129,7 @@ def head(title, desc, path):
     <link rel="canonical" href="{url}" />
     <link rel="apple-touch-icon" sizes="180x180" href="/jonesco-bug180.png" />
     <link rel="apple-touch-icon" sizes="152x152" href="/jonesco-bug152.png" />
-    <link rel="stylesheet" href="https://design.jonesco.com/v/2.0.0/system.css" />
+    <link rel="stylesheet" href="https://design.jonesco.com/v/3.4.0/system.css" />
     <link rel="stylesheet" href="/css/jonesco.css?v={CSS_V}" />
   </head>
   <body>
