@@ -13,7 +13,7 @@ import html, json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://jonesco.com'
-CSS_V = 60
+CSS_V = 61
 
 # grid order from the old home page (Wayblazer skipped: it is a case study on this site; PartsTree dropped)
 ORDER = ['firefly', 'wellsmith', 'ironsight', 'prime', 'rta', 'youga', 'dort', 'travelocity',
@@ -137,6 +137,7 @@ def head(title, desc, path):
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="theme-color" content="#000000" />
     <meta name="robots" content="noindex, nofollow" />
     <title>{e(title)}</title>

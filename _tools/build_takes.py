@@ -11,7 +11,7 @@ import datetime, html, os, random, re, subprocess, sys, tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://jonesco.com'
-CSS_V = 60
+CSS_V = 61
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
 
@@ -86,6 +86,7 @@ def page(title, desc, url, body, og_image=None, extra_head=''):
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="theme-color" content="#000000" />
     <title>{t}</title>
     <meta name="description" content="{d}" />
