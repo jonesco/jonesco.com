@@ -105,7 +105,7 @@ def media(items):
         return ''
     if len(items) == 1:
         return '\n        ' + one(*items[0])
-    phones = len(items) >= 3 and all(re.search(r'mobile\d|youga\d|activity|meds|messaging|yourself', s) for _, s in items)
+    phones = len(items) >= 3 and all(re.search(r'mobile\d|youga\d|activity|meds|messaging', s) for _, s in items)
     cols = 'cols-4' if phones else 'cols-3' if len(items) in (3, 6) else 'cols-2'
     return f'\n        <div class="{cols} archive-media">' + ''.join(one(*m) for m in items) + '</div>'
 
