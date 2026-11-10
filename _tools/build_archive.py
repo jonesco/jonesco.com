@@ -13,13 +13,13 @@ import html, json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://jonesco.com'
-CSS_V = 62
+CSS_V = 63
 
 # grid order from the old home page (Wayblazer skipped: it is a case study on this site; PartsTree dropped)
-ORDER = ['firefly', 'wellsmith', 'ironsight', 'prime', 'rta', 'youga', 'dort', 'travelocity',
+ORDER = ['firefly', 'ironsight', 'prime', 'rta', 'dort', 'travelocity',
          'joule', 'vitaminwater', 'rembrandt']
-THUMB = {'firefly': 'firefly_thumb.jpg', 'wellsmith': 'wellsmith_thumb.jpg', 'ironsight': 'ironsight_thumb.jpg',
-         'prime': 'prime_thumb.jpg', 'rta': 'rta-shirts_thumb.jpg', 'youga': 'youga_card.png', 'dort': 'glbc_card.jpg',
+THUMB = {'firefly': 'firefly_thumb.jpg', 'ironsight': 'ironsight_thumb.jpg',
+         'prime': 'prime_thumb.jpg', 'rta': 'rta-shirts_thumb.jpg', 'dort': 'glbc_card.jpg',
          'travelocity': 'travelocity_thumb.jpg', 'joule': 'joule_card.png', 'vitaminwater': 'vw_thumb.jpg',
          'rembrandt': 'rembrandt_thumb.jpg'}
 # archive numbers, shown like the case study numbers
@@ -212,7 +212,7 @@ def tile(href, src, num, name, desc, tag):
 
 
 # short card tags where the category line is too long for a pill
-TAG = {'wellsmith': 'Web and mobile', 'dort': 'SMS campaign', 'travelocity': ':30 TV spot'}
+TAG = {'dort': 'SMS campaign', 'travelocity': ':30 TV spot'}
 
 
 def tag(slug):
@@ -234,6 +234,10 @@ def index_page():
       </div>
     </div>'''
     return head('Archive | Jonesco', 'Additional work.', '/archive/') + body + FOOTER
+
+
+# projects removed from the archive; their data stays in archive-source.json
+RETIRED = ['wellsmith', 'youga']
 
 
 def stub(target):
@@ -262,7 +266,9 @@ def main():
         w(f'{slug}.html', stub(f'/archive/{slug}'))
         print(f'archive/{slug:12} hero {len(p["hero"])}  ' + ', '.join(f'{s["label"]} ({len(s["media"])})' for s in p['sections']))
     w('archive/index.html', index_page())
-    w('about.html', stub('/'))   # the archive's About page was retired 2026-11-10
+    w('about.html', stub('/'))
+    for gone in RETIRED:   # taken out of the archive 2026-11-10: old links land on the archive grid
+        w(f'{gone}.html', stub('/archive/'))   # the archive's About page was retired 2026-11-10
     print('archive/index.html and redirect stubs at the old URLs')
 
 

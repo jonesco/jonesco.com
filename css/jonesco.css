@@ -468,6 +468,7 @@ html.compact-header .apps-hero > div.apps-intro h1 { border-bottom: 0; padding-b
 }
 
 /* ---------- Archive (original jonesco.com work; noindexed, unlinked from the main site) ---------- */
+.archive-index .work-grid { margin-bottom: 104px; }   /* space above the footer, the same as the home page's sections */
 .archive-index .tile-image img { object-position: center; }   /* same 4:3 tiles as home; the old square thumbnails crop from the middle */
 .archive-index a[href="/archive/prime"] .tile-image img { object-position: center calc(50% + 8px); }   /* drops the logo 8px so the crop clears the thin blue band at its top */
 .archive-page img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
