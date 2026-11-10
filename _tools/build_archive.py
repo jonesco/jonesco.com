@@ -145,7 +145,7 @@ def head(title, desc, path):
     <link rel="canonical" href="{url}" />
     <link rel="apple-touch-icon" sizes="180x180" href="/jonesco-bug180.png" />
     <link rel="apple-touch-icon" sizes="152x152" href="/jonesco-bug152.png" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jonesco/system@2.0.0/system.css" />
+    <link rel="stylesheet" href="https://design.jonesco.com/v/2.0.0/system.css" />
     <link rel="stylesheet" href="/css/jonesco.css?v={CSS_V}" />
   </head>
   <body>
