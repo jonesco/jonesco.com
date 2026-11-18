@@ -81,6 +81,12 @@
     </script>
 
     <title>IBM Network Intelligence | Jonesco</title>
+    <style>
+      /* Visual labels, not headings: same look as the h4 and h5 styles, so the outline goes h1, h2 with nothing skipped */
+      .lede { font-size: 21px; font-weight: 400; line-height: 1.45; margin: 0 0 1em; }
+      .label { font-family: var(--label); font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; margin: 0; padding-bottom: 12px; border-bottom: var(--rule); }
+      .cols-2:has(> div > .label) { margin-top: 24px; margin-bottom: 48px; }
+    </style>
   </head>
   <body>
     <header class="site-header">
@@ -97,25 +103,25 @@
     <div id="root">
       <div class="page">
         <div>
-          <h5 id="rcorners1">Case Study #5260</h5>
+          <p id="rcorners1">Case Study #5260</p>
           <h1><strong>IBM Network Intelligence</strong></h1>
-          <h4>
+          <p class="lede">
             <img class="floaterleft app-cap" src="/images/work/ini-cap.png?v=3" alt="" />IBM Network Intelligence is an AI product for network operations. An agent works network problems on its
             own: it correlates alarms and metrics, forms and revises conclusions, and proposes fixes, sometimes
             running them. A person oversees it. My job was to design how that oversight works, for an agent that
             keeps working whether or not anyone is watching.
-          </h4>
-          <h4>
+          </p>
+          <p class="lede">
             I’ve worked on Network Intelligence for more than two years. Once again, that meant learning a
             complicated domain well enough to design for it: network operations, where engineers keep carrier and
             enterprise networks running. They watch routing between networks, streams of telemetry and floods of
             alarms from devices made by many vendors, and trace each failure back to its cause. All of that while
             keeping up with AI and agentic systems, which change almost every week.
-          </h4>
+          </p>
         </div>
         <div class="cols-2">
           <div>
-            <h5><strong>Challenges to solve:</strong></h5>
+            <p class="label">Challenges to solve:</p>
             <ul class="a">
               <li class="special-item">Design for an agent that runs continuously, not a chatbot bolted onto a dashboard</li>
               <li class="special-item">Show what needs a person right now, and what changed while they were away</li>
@@ -124,7 +130,7 @@
             </ul>
           </div>
           <div>
-            <h5><strong>My role:</strong></h5>
+            <p class="label">My role:</p>
             <ul class="a">
               <li class="special-item">Principal product designer, guiding the product from proof of concept to general release and beyond</li>
               <li class="special-item">Define the core experience, reasoning patterns and interaction model</li>
@@ -201,8 +207,9 @@
           </p>
           <p>
             Several of these patterns were adopted by Carbon, IBM’s design system, so teams across IBM can use
-            them. One of them is a UX pattern I invented for passing network data to the AI as context, so a
-            person can hand it exactly what they want analyzed.
+            them: a reason trace that shows how the agent got to its answer, findings backed by evidence, and
+            ways to judge how far to trust it. Another is a UX pattern I invented for passing network data to
+            the AI as context, so a person can hand it exactly what they want analyzed.
           </p>
         </div>
         <hr />
