@@ -384,12 +384,12 @@ html.compact-header .apps-hero > div.apps-intro h1 { border-bottom: 0; padding-b
    panel under the bar (all links, large, ruled like the contact list) */
 .menu-toggle { display: none; }
 @media (max-width: 640px) {
+  /* The system's menu button (.sys-menu-btn, 3.7.0): plain label, no box; the pinned system version doesn't have it yet, so it's repeated here */
   .menu-toggle {
-    display: block; background: none; border: 2px solid var(--paper); color: var(--paper); cursor: pointer;
+    display: block; height: 44px; margin-right: -8px; padding: 0 8px; border: 0; background: none; color: inherit; cursor: pointer;
     font-family: var(--label); font-weight: 700; font-size: 14px; letter-spacing: .03em; text-transform: uppercase;
-    padding: 8px 12px 6px; line-height: 1;
   }
-  .menu-toggle:focus-visible { outline: 3px solid var(--highlight); outline-offset: 2px; }
+  .menu-toggle:hover, .menu-toggle:focus-visible { color: var(--highlight); }
   .site-header:has(.menu-toggle) nav {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
     flex-direction: column; gap: 0; background: var(--ink); padding: 0 16px 24px; border-top: 1px solid var(--line-dark);
